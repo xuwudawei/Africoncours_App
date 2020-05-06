@@ -1,4 +1,4 @@
-# gss_connect_app
+# Africoncours_App
 
 A new Flutter project.
 
