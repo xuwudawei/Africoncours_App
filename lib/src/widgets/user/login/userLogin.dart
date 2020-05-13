@@ -79,7 +79,7 @@ class _UserLoginState extends State<UserLogin> {
                         height: 40,
                       ),
                       Icon(
-                        Icons.fastfood,
+                        Icons.fiber_manual_record,
                         color: Colors.white,
                         size: 60,
                       ),
@@ -87,7 +87,7 @@ class _UserLoginState extends State<UserLogin> {
                         height: 20,
                       ),
                       Text(
-                        "Taste Me",
+                        "Africoncours",
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w700,
@@ -98,8 +98,10 @@ class _UserLoginState extends State<UserLogin> {
                   width: double.infinity,
                   height: 300,
                   decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          colors: [Color(0xffff3a5a), Color(0xfffe494d)])),
+                      gradient: LinearGradient(colors: [
+                    Color.fromRGBO(220, 20, 47, 0.7),
+                    Color(0xfffe494d)
+                  ])),
                 ),
               ),
             ],
@@ -112,7 +114,7 @@ class _UserLoginState extends State<UserLogin> {
                   padding: EdgeInsets.all(5),
                   child: Text(
                     "Invalid email or password",
-                    style: TextStyle(color: Colors.red),
+                    style: TextStyle(color: Color.fromRGBO(220, 20, 47, 0.7)),
                   ),
                 )
               : Text("")),
@@ -121,7 +123,7 @@ class _UserLoginState extends State<UserLogin> {
                   padding: EdgeInsets.all(5),
                   child: Text(
                     "No such account exists",
-                    style: TextStyle(color: Colors.red),
+                    style: TextStyle(color: Color.fromRGBO(220, 20, 47, 0.7)),
                   ),
                 )
               : Text("")),
@@ -131,7 +133,7 @@ class _UserLoginState extends State<UserLogin> {
               elevation: 2.0,
               borderRadius: BorderRadius.all(Radius.circular(30)),
               child: TextFormField(
-                cursorColor: Colors.deepOrange,
+                cursorColor: Color.fromRGBO(220, 20, 47, 0.7),
                 decoration: InputDecoration(
                     hintText: "Email",
                     prefixIcon: Material(
@@ -139,7 +141,7 @@ class _UserLoginState extends State<UserLogin> {
                       borderRadius: BorderRadius.all(Radius.circular(30)),
                       child: Icon(
                         Icons.email,
-                        color: Colors.red,
+                        color: Color.fromRGBO(220, 20, 47, 0.7),
                       ),
                     ),
                     border: InputBorder.none,
@@ -162,7 +164,7 @@ class _UserLoginState extends State<UserLogin> {
                     });
                   } else {
                     setState(() {
-                      validEmial = "please enter a valid email";
+                      validEmial = "---------------enter a valid email";
                     });
                   }
                 },
@@ -186,7 +188,7 @@ class _UserLoginState extends State<UserLogin> {
                       borderRadius: BorderRadius.all(Radius.circular(30)),
                       child: Icon(
                         Icons.lock,
-                        color: Colors.red,
+                        color: Color.fromRGBO(220, 20, 47, 0.7),
                       ),
                     ),
                     border: InputBorder.none,
@@ -225,48 +227,7 @@ class _UserLoginState extends State<UserLogin> {
                       setState(() {
                         clickedLogin = true;
                       });
-                      if (formKey.currentState.validate()) {
-                        formKey.currentState.save();
-                        print(email);
-                        print(password);
-                        Login login =
-                            Login(email: this.email, password: this.password);
-                        Future<Map> data = login.login();
-                        // Send data to backend for authentication
-                        data.then(
-                          (value) async {
-                            setState(() {
-                              clickedLogin = false;
-                            });
-                            print(value);
-                            if (value["invalid"] == true) {
-                              setState(() {
-                                invalid = true;
-                              });
-                            } else if (value["exist"] == false) {
-                              setState(() {
-                                exist = false;
-                              });
-                            } else {
-                              if (value["logged"] == true) {
-                                if (value["verify"] == false) {
-                                  Navigator.of(context)
-                                      .pushNamed('/confirm/email');
-                                } else if (value["first_time"] == true) {
-                                  Navigator.of(context)
-                                      .pushNamed('/user/continue/registration');
-                                  formKey.currentState.reset();
-                                } else {
-                                  Navigator.of(context).pushNamed('/user/page');
-                                  formKey.currentState.reset();
-                                }
-                                // Navigator.of(context).pushNamed('/user/page');
-                              }
-                            }
-                          },
-                        );
-                        // If validated, Navvigate to userpage
-                      }
+                      Navigator.of(context).pushNamed('/user/page');
                     }),
               )),
           SizedBox(
@@ -280,7 +241,9 @@ class _UserLoginState extends State<UserLogin> {
             child: Text(
               "FORGOT PASSWORD ?",
               style: TextStyle(
-                  color: Colors.red, fontSize: 12, fontWeight: FontWeight.w700),
+                  color: Color.fromRGBO(220, 20, 47, 0.7),
+                  fontSize: 12,
+                  fontWeight: FontWeight.w700),
             ),
           )),
           SizedBox(
@@ -302,14 +265,17 @@ class _UserLoginState extends State<UserLogin> {
                 },
                 child: Text("Sign Up ",
                     style: TextStyle(
-                        color: Colors.red,
+                        color: Color.fromRGBO(220, 20, 47, 0.7),
                         fontWeight: FontWeight.w500,
                         fontSize: 12,
                         decoration: TextDecoration.underline)),
               ),
-              (clickedLogin == true ? loadingWidget() : Text(""))
             ],
-          )
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          (clickedLogin == true ? loadingWidget() : Text(""))
         ],
       ),
     );

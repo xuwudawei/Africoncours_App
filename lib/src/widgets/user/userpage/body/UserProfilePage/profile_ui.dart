@@ -81,13 +81,6 @@ class UserInfo extends StatelessWidget {
                         color: Colors.grey,
                         tiles: [
                           ListTile(
-                            contentPadding: EdgeInsets.symmetric(
-                                horizontal: 12, vertical: 4),
-                            leading: Icon(Icons.my_location),
-                            title: Text("Institution"),
-                            subtitle: Text(studentInfo.getUserInfo["school"]),
-                          ),
-                          ListTile(
                             leading: Icon(Icons.email),
                             title: Text("Email"),
                             subtitle: Text(studentInfo.getUserInfo["email"]),
@@ -104,16 +97,10 @@ class UserInfo extends StatelessWidget {
                                 "This is a about me link and you can know about me in this section."),
                           ),
                           ListTile(
-                            leading: Icon(Icons.person),
+                            leading: Icon(Icons.location_on),
                             title: Text("Current Address"),
                             subtitle: Text(
                                 studentInfo.getUserInfo["current_address"]),
-                          ),
-                          ListTile(
-                            leading: Icon(Icons.person),
-                            title: Text("Permanent Address"),
-                            subtitle: Text(
-                                studentInfo.getUserInfo["permanent_address"]),
                           ),
                         ],
                       ),

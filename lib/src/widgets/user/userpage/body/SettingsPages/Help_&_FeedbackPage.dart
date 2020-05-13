@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:loading/indicator/ball_spin_fade_loader_indicator.dart';
 import 'package:loading/loading.dart';
 
-var color = 0xFF784ADE;
-var bg = 0xFF784ADE;
 GlobalKey<ScaffoldState> _scaffold = GlobalKey<ScaffoldState>();
 
 class Help extends StatefulWidget {
@@ -21,7 +19,7 @@ class _HelpState extends State<Help> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Help & Feedback'),
-        backgroundColor: Color(color),
+        backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
       ),
       body: Container(
         margin: EdgeInsets.symmetric(horizontal: 16),
@@ -33,18 +31,18 @@ class _HelpState extends State<Help> {
                 height: 60,
               ),
               Text(
-                "Feedback Form",
+                "User FeedBack Form",
                 style: TextStyle(fontFamily: 'serif', fontSize: 30.0),
               ),
               SizedBox(
-                height: 40,
+                height: 20,
               ),
               TextFormField(
                 decoration: InputDecoration(
                   hintText: "Title of Issue",
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
-                      color: Color(bg),
+                      color: Color.fromRGBO(220, 20, 47, 0.7),
                       width: 2,
                     ),
                   ),
@@ -63,14 +61,17 @@ class _HelpState extends State<Help> {
                   title = val;
                 },
               ),
+              SizedBox(
+                height: 5,
+              ),
               TextFormField(
-                minLines: 2,
-                maxLines: 10,
+                minLines: 8,
+                maxLines: 20,
                 decoration: InputDecoration(
-                  hintText: "Grievances",
+                  hintText: "Description of Issue",
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
-                      color: Color(bg),
+                      color: Color.fromRGBO(220, 20, 47, 0.7),
                       width: 2,
                     ),
                   ),
@@ -90,15 +91,15 @@ class _HelpState extends State<Help> {
                 },
               ),
               SizedBox(
-                height: 10,
+                height: 20,
               ),
               ButtonTheme(
                 minWidth: MediaQuery.of(context).size.width - 50,
                 height: 50,
                 child: RaisedButton(
-                  color: Color(bg),
+                  color: Color.fromRGBO(220, 20, 47, 0.7),
                   child: Text(
-                    "Submit Feedback",
+                    "Submit",
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () {
@@ -131,7 +132,7 @@ Widget loadingWidget() {
 
 showDoneSnackBar() {
   final snackbar = SnackBar(
-    backgroundColor: Color(bg),
+    backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
     content: Text(
       "Feedback Submitted",
       textAlign: TextAlign.center,

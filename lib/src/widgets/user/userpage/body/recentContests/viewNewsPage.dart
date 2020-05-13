@@ -8,7 +8,7 @@ class ViewNews extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text("News"),
+          title: Text("Contests"),
           backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
         ),
         body: Container(

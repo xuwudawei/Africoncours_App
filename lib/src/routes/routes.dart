@@ -1,3 +1,4 @@
+import 'package:Africoncours_App/src/widgets/user/userpage/body/SettingsPages/Help_&_FeedbackPage.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/user/firstform/first.dart';
@@ -24,7 +25,7 @@ import '../widgets/user/userpage/body/SettingsPages/AccountSecurityPage.dart';
 import '../widgets/user/userpage/body/SettingsPages/NotificationsPage.dart';
 import '../widgets/user/userpage/body/SettingsPages/PrivacyPage.dart';
 import '../widgets/user/userpage/body/SettingsPages/AboutPage.dart';
-import '../widgets/user/userpage/body/SettingsPages/HelpPage.dart';
+import '../widgets/user/userpage/body/SettingsPages/Help_&_FeedbackPage.dart';
 import '../widgets/user/userpage/body/SettingsPages/ServicePage.dart';
 
 //Account Security Pages
