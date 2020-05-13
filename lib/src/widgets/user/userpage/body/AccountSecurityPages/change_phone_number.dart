@@ -7,6 +7,8 @@ import 'package:loading/indicator/ball_spin_fade_loader_indicator.dart';
 import 'package:loading/loading.dart';
 import 'package:provider/provider.dart';
 
+var bg = 0xFF784ADE;
+
 class ChangePhoneNumber extends StatefulWidget {
   @override
   _ChangePhoneNumberState createState() => _ChangePhoneNumberState();
@@ -25,7 +27,7 @@ class _ChangePhoneNumberState extends State<ChangePhoneNumber> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
+        backgroundColor: Color(bg),
         title: Text("Account Security"),
       ),
       body: Container(
@@ -88,15 +90,15 @@ class _ChangePhoneNumberState extends State<ChangePhoneNumber> {
               decoration: InputDecoration(
                 labelText: "contact",
                 hintStyle: TextStyle(fontSize: 25),
-                hintText: "0XXXXXXXXX",
+                hintText: "0244581027",
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Color.fromRGBO(220, 20, 47, 0.7),
+                    color: Color(bg),
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Color.fromRGBO(220, 20, 47, 0.7),
+                    color: Color(bg),
                   ),
                 ),
                 focusedErrorBorder: OutlineInputBorder(
@@ -114,7 +116,7 @@ class _ChangePhoneNumberState extends State<ChangePhoneNumber> {
                 return validatePhone;
               },
               onChanged: (value) {
-                if (value.length <= 10) {
+                if (value.length <= 9) {
                   setState(() {
                     validatePhone = "please provide 10 numbers";
                   });
@@ -125,9 +127,7 @@ class _ChangePhoneNumberState extends State<ChangePhoneNumber> {
                 }
               },
             ),
-            data: Theme.of(context).copyWith(
-              primaryColor: Color.fromRGBO(220, 20, 47, 0.7),
-            ),
+            data: Theme.of(context).copyWith(primaryColor: Color(bg)),
           ),
         ),
       ],
@@ -135,41 +135,35 @@ class _ChangePhoneNumberState extends State<ChangePhoneNumber> {
   }
 
   Widget update(context) {
-    final userInfo = Provider.of<UserInfoProvider>(context);
-
     return ButtonTheme(
       minWidth: MediaQuery.of(context).size.width,
       height: 50,
       child: RaisedButton(
-        color: Color.fromRGBO(220, 20, 47, 0.7),
+        color: Color(bg),
         child: Text(
           "Update",
           style:
               TextStyle(color: Colors.white, fontSize: 20, fontFamily: 'serif'),
         ),
-        onPressed: () {
-          if (formKey.currentState.validate()) {
-            setState(
-              () {
-                isLoading = true;
-              },
-            );
-            formKey.currentState.save();
-            Update changePhone = Update(
-              id: userInfo.getUserInfo["_id"],
-              token: userInfo.getUserInfo["auth_token"],
-              upDateInfo: {"phone": _selected.dialingCode + contact_number},
-            );
-            Future<Map> updatedInfo = changePhone.update();
-            updatedInfo.then((onValue) {
-              userInfo.setUserInfo(onValue);
-            }).catchError((onError) {
-              print(onError);
-            });
-            setState(() {
-              isLoading = false;
-            });
-            formKey.currentState.reset();
+        onPressed: () async {
+          formKey.currentState.save();
+          if (contact_number.length == 0) {
+            print("NO");
+          } else {
+            if (formKey.currentState.validate()) {
+              setState(
+                () {
+                  isLoading = true;
+                },
+              );
+              formKey.currentState.save();
+              //changes in the backend
+
+              setState(() {
+                isLoading = false;
+              });
+              formKey.currentState.reset();
+            }
           }
         },
       ),

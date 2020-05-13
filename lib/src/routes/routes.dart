@@ -25,13 +25,11 @@ import '../widgets/user/userpage/body/SettingsPages/AccountSecurityPage.dart';
 import '../widgets/user/userpage/body/SettingsPages/NotificationsPage.dart';
 import '../widgets/user/userpage/body/SettingsPages/PrivacyPage.dart';
 import '../widgets/user/userpage/body/SettingsPages/AboutPage.dart';
-import '../widgets/user/userpage/body/SettingsPages/Help & FeedbackPage.dart';
-import '../widgets/user/userpage/body/SettingsPages/Africoncours Service Page.dart';
+import '../widgets/user/userpage/body/SettingsPages/HelpPage.dart';
+import '../widgets/user/userpage/body/SettingsPages/ServicePage.dart';
 
 //Account Security Pages
 import '../widgets/user/userpage/body/AccountSecurityPages/change_password.dart';
-import '../widgets/user/userpage/body/AccountSecurityPages/change_email.dart';
-import '../widgets/user/userpage/body/AccountSecurityPages/change_phone_number.dart';
 
 //Side Menu Pages
 import '../widgets/user/userpage/body/news.dart';
@@ -56,7 +54,7 @@ class RouteGenerator {
       case '/':
         return MaterialPageRoute(builder: (_) => Cover());
       case '/useroption':
-        return MaterialPageRoute(builder: (_) => User_Option());
+        return MaterialPageRoute(builder: (_) => UserOption());
       case '/user/login':
         return MaterialPageRoute(builder: (_) => UserLogin());
       case '/user/signup':
@@ -92,7 +90,7 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => ChangeEmail());
       case '/user/settings/changephonenumber':
         return MaterialPageRoute(builder: (_) => ChangePhoneNumber());
-      case '/user/sidemenu/news/ongoing':
+      case '/user/sidemenu/contest/ongoing':
         return MaterialPageRoute(builder: (_) => Ongoing());
       case '/user/sidemenu/settings':
         return MaterialPageRoute(builder: (_) => SideMenuSettings());

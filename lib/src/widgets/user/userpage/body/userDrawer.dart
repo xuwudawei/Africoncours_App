@@ -39,9 +39,9 @@ class _UserDrawerState extends State<UserDrawer> {
           ),
           ListTile(
             leading: Icon(FontAwesomeIcons.newspaper),
-            title: Text("News"),
+            title: Text("Contest"),
             onTap: () {
-              Navigator.of(context).pushNamed('/user/sidemenu/news/ongoing');
+              Navigator.of(context).pushNamed('/user/sidemenu/contest/ongoing');
             },
           ),
           ListTile(

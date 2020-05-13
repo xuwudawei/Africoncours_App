@@ -112,9 +112,10 @@ class _UserPageState extends State<UserPage> {
             BottomNavigationBarItem(
                 title: Text("Home"), icon: Icon(Icons.home)),
             BottomNavigationBarItem(
-                title: Text("News"), icon: Icon(FontAwesomeIcons.newspaper)),
+                title: Text("Contests"),
+                icon: Icon(FontAwesomeIcons.newspaper)),
             BottomNavigationBarItem(
-                title: Text("Competitions"), icon: Icon(Icons.event_note)),
+                title: Text("Jobs"), icon: Icon(Icons.event_note)),
             BottomNavigationBarItem(
                 title: Text("settings"), icon: Icon(Icons.settings))
           ],

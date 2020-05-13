@@ -6,12 +6,16 @@ import 'package:loading/indicator/ball_spin_fade_loader_indicator.dart';
 import 'package:loading/loading.dart';
 import 'package:provider/provider.dart';
 
+var bg = 0xFF784ADE;
+var color = 0xFF784ADE;
+
 class ChangePassword extends StatefulWidget {
   @override
   _ChangePasswordState createState() => _ChangePasswordState();
 }
 
 class _ChangePasswordState extends State<ChangePassword> {
+  GlobalKey<ScaffoldState> _scaffold = GlobalKey<ScaffoldState>();
   var valipPassword = null;
   var validComPass = "";
   var savedPass = "";
@@ -25,7 +29,6 @@ class _ChangePasswordState extends State<ChangePassword> {
   bool isLoading = false;
 
   final passwordValidator = MultiValidator([
-    RequiredValidator(errorText: 'password is required'),
     MinLengthValidator(8, errorText: 'password must be at least 8 digits long'),
     PatternValidator(r'(?=.*?[#?!@$%^&*-])',
         errorText: 'passwords must have at least one special character')
@@ -36,9 +39,10 @@ class _ChangePasswordState extends State<ChangePassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffold,
       appBar: AppBar(
         title: Text('Change'),
-        backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
+        backgroundColor: Color(color),
       ),
       body: Container(
         padding: EdgeInsets.only(left: 40, right: 40),
@@ -66,6 +70,9 @@ class _ChangePasswordState extends State<ChangePassword> {
                   height: 10,
                 ),
                 savechanges(context),
+                SizedBox(
+                  height: 10,
+                ),
                 ((isLoading == true ? loadingWidget() : Text("")))
               ],
             ),
@@ -82,11 +89,11 @@ class _ChangePasswordState extends State<ChangePassword> {
       decoration: InputDecoration(
           hintText: "******",
           labelText: "New Password",
-          labelStyle: TextStyle(color: Color.fromRGBO(220, 20, 47, 0.7)),
-          enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Color.fromRGBO(220, 20, 47, 0.7))),
-          focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Color.fromRGBO(220, 20, 47, 0.7))),
+          labelStyle: TextStyle(color: Color(bg)),
+          enabledBorder:
+              OutlineInputBorder(borderSide: BorderSide(color: Color(bg))),
+          focusedBorder:
+              OutlineInputBorder(borderSide: BorderSide(color: Color(bg))),
           focusedErrorBorder:
               OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
           errorBorder:
@@ -112,15 +119,11 @@ class _ChangePasswordState extends State<ChangePassword> {
       decoration: InputDecoration(
           hintText: "******",
           labelText: "Confirm New Password",
-          labelStyle: TextStyle(color: Color.fromRGBO(220, 20, 47, 0.7)),
-          enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(
-            color: Color.fromRGBO(220, 20, 47, 0.7),
-          )),
-          focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(
-            color: Color.fromRGBO(220, 20, 47, 0.7),
-          )),
+          labelStyle: TextStyle(color: Color(bg)),
+          enabledBorder:
+              OutlineInputBorder(borderSide: BorderSide(color: Color(bg))),
+          focusedBorder:
+              OutlineInputBorder(borderSide: BorderSide(color: Color(bg))),
           focusedErrorBorder:
               OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
           errorBorder:
@@ -130,9 +133,6 @@ class _ChangePasswordState extends State<ChangePassword> {
       },
       autovalidate: true,
       validator: (password) {
-        if (password.isEmpty) {
-          return "Can't be empty";
-        }
         if (password != _pass.text) {
           return "password mismatch";
         }
@@ -142,12 +142,11 @@ class _ChangePasswordState extends State<ChangePassword> {
   }
 
   Widget savechanges(context) {
-    final userInfo = Provider.of<UserInfoProvider>(context);
     return ButtonTheme(
       minWidth: MediaQuery.of(context).size.width,
       height: 50,
       child: RaisedButton(
-        color: Color.fromRGBO(220, 20, 47, 0.7),
+        color: Color(bg),
         child: Text(
           "Update",
           style:
@@ -158,27 +157,21 @@ class _ChangePasswordState extends State<ChangePassword> {
           //changes will be made here in the backend;
           if (formKey.currentState.validate()) {
             setState(() {
-              this.isLoading = false;
+              this.isLoading = true;
             });
-            ChangePass change = ChangePass(
-              id: userInfo.getUserInfo["_id"],
-              token: userInfo.getUserInfo["auth_token"],
-              password: {"password": passwords},
-            );
-            Future<Map> updated = change.changePass();
-            updated.then((onValue) {
-              userInfo.setUserInfo(onValue);
-            });
+            //changes in the backend
             setState(
               () {
                 this.isLoading = false;
               },
             );
             formKey.currentState.reset();
+            _confirmPass.text = "";
             _pass.text = "";
-            setState(() {
-              validateComfirmPass = true;
-            });
+            showSnackBar();
+            // setState(() {
+            //   validateComfirmPass = true;
+            // });
           }
         },
       ),
@@ -193,5 +186,18 @@ class _ChangePasswordState extends State<ChangePassword> {
         size: 50,
       ),
     );
+  }
+
+  showSnackBar() {
+    final snackbar = new SnackBar(
+      duration: new Duration(seconds: 3),
+      backgroundColor: Color(bg),
+      content: Text(
+        "Password Updated Successfully",
+        textAlign: TextAlign.center,
+        style: TextStyle(fontSize: 15),
+      ),
+    );
+    _scaffold.currentState.showSnackBar(snackbar);
   }
 }

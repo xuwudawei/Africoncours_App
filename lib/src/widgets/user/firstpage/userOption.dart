@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class User_Option extends StatefulWidget {
+class UserOption extends StatefulWidget {
   @override
-  _User_OptionState createState() => _User_OptionState();
+  _UserOptionState createState() => _UserOptionState();
 }
 
-class _User_OptionState extends State<User_Option> {
+class _UserOptionState extends State<UserOption> {
   @override
   Widget build(BuildContext context) {
     return Container(
