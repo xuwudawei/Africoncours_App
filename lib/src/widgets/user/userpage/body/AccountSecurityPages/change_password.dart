@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
-import '../../../.././../provider/User.dart';
-import '../../../../../../src/request/changePasword.dart';
+import '../../../../../provider/User.dart';
+import '../../../../../request/changePasword.dart';
 import 'package:loading/indicator/ball_spin_fade_loader_indicator.dart';
 import 'package:loading/loading.dart';
 import 'package:provider/provider.dart';
-
-var bg = 0xFF784ADE;
-var color = 0xFF784ADE;
 
 class ChangePassword extends StatefulWidget {
   @override
@@ -42,7 +39,7 @@ class _ChangePasswordState extends State<ChangePassword> {
       key: _scaffold,
       appBar: AppBar(
         title: Text('Change'),
-        backgroundColor: Color(color),
+        backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
       ),
       body: Container(
         padding: EdgeInsets.only(left: 40, right: 40),
@@ -89,11 +86,17 @@ class _ChangePasswordState extends State<ChangePassword> {
       decoration: InputDecoration(
           hintText: "******",
           labelText: "New Password",
-          labelStyle: TextStyle(color: Color(bg)),
-          enabledBorder:
-              OutlineInputBorder(borderSide: BorderSide(color: Color(bg))),
-          focusedBorder:
-              OutlineInputBorder(borderSide: BorderSide(color: Color(bg))),
+          labelStyle: TextStyle(
+            color: Color.fromRGBO(220, 20, 47, 0.7),
+          ),
+          enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+            color: Color.fromRGBO(220, 20, 47, 0.7),
+          )),
+          focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+            color: Color.fromRGBO(220, 20, 47, 0.7),
+          )),
           focusedErrorBorder:
               OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
           errorBorder:
@@ -119,11 +122,17 @@ class _ChangePasswordState extends State<ChangePassword> {
       decoration: InputDecoration(
           hintText: "******",
           labelText: "Confirm New Password",
-          labelStyle: TextStyle(color: Color(bg)),
-          enabledBorder:
-              OutlineInputBorder(borderSide: BorderSide(color: Color(bg))),
-          focusedBorder:
-              OutlineInputBorder(borderSide: BorderSide(color: Color(bg))),
+          labelStyle: TextStyle(
+            color: Color.fromRGBO(220, 20, 47, 0.7),
+          ),
+          enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+            color: Color.fromRGBO(220, 20, 47, 0.7),
+          )),
+          focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+            color: Color.fromRGBO(220, 20, 47, 0.7),
+          )),
           focusedErrorBorder:
               OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
           errorBorder:
@@ -142,24 +151,31 @@ class _ChangePasswordState extends State<ChangePassword> {
   }
 
   Widget savechanges(context) {
+    final studentInfo = Provider.of<UserInfoProvider>(context);
     return ButtonTheme(
       minWidth: MediaQuery.of(context).size.width,
       height: 50,
       child: RaisedButton(
-        color: Color(bg),
+        color: Color.fromRGBO(220, 20, 47, 0.7),
         child: Text(
           "Update",
           style:
               TextStyle(color: Colors.white, fontSize: 20, fontFamily: 'serif'),
         ),
-        onPressed: () {
+        onPressed: () async {
           formKey.currentState.save();
           //changes will be made here in the backend;
           if (formKey.currentState.validate()) {
             setState(() {
               this.isLoading = true;
             });
-            //changes in the backend
+            ChangePass change = ChangePass(
+              id: studentInfo.getUserInfo["_id"],
+              token: studentInfo.getUserInfo["auth_token"],
+              password: {"password": passwords},
+            );
+            var updated = await change.changePass();
+            studentInfo.setUserInfo(updated);
             setState(
               () {
                 this.isLoading = false;
@@ -191,7 +207,7 @@ class _ChangePasswordState extends State<ChangePassword> {
   showSnackBar() {
     final snackbar = new SnackBar(
       duration: new Duration(seconds: 3),
-      backgroundColor: Color(bg),
+      backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
       content: Text(
         "Password Updated Successfully",
         textAlign: TextAlign.center,

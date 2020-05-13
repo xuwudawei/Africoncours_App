@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:preferences/preference_page.dart';
 import 'package:preferences/preferences.dart';
 
-var color = 0xFF784ADE;
-
 class Notifications extends StatefulWidget {
   @override
   _NotificationsState createState() => _NotificationsState();
@@ -15,7 +13,7 @@ class _NotificationsState extends State<Notifications> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Settings'),
-        backgroundColor: Color(color),
+        backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
       ),
       body: PreferencePage([
         PreferenceTitle('Manage Notifications'),

@@ -45,13 +45,6 @@ class _UserDrawerState extends State<UserDrawer> {
             },
           ),
           ListTile(
-            leading: Icon(FontAwesomeIcons.book),
-            title: Text("Chats"),
-            onTap: () {
-              Navigator.of(context).pushNamed('/user/sidemenu/chats');
-            },
-          ),
-          ListTile(
             leading: Icon(FontAwesomeIcons.graduationCap),
             title: Text("Jobs"),
             onTap: () {

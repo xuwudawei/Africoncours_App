@@ -118,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     MaterialButton(
-                        color: Color(bg),
+                        color: Color.fromRGBO(220, 20, 47, 0.7),
                         child: Text(
                           "Camera",
                           style: TextStyle(color: Colors.white),
@@ -127,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           getImage(ImageSource.camera);
                         }),
                     MaterialButton(
-                        color: Color(bg),
+                        color: Color.fromRGBO(220, 20, 47, 0.7),
                         child: Text(
                           "Device",
                           style: TextStyle(color: Colors.white),
@@ -144,7 +144,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       "Update",
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
-                    color: Color(bg),
+                    color: Color.fromRGBO(220, 20, 47, 0.7),
                     onPressed: (_selectedFile == null)
                         ? null
                         : () async {
@@ -189,7 +189,7 @@ class _MyHomePageState extends State<MyHomePage> {
   showSnapBar() {
     final snackBar = new SnackBar(
       duration: new Duration(seconds: 3),
-      backgroundColor: Color(bg),
+      backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
       content: Text(
         "User Avatar updated successfully",
         textAlign: TextAlign.center,

@@ -12,7 +12,7 @@ class ChangePass {
   Future<Map> changePass() async {
     try {
       var updated = await http.put(
-        '${URLS.environment == "production" ? URLS.url[1] : URLS.url[0]}/user/user/update/password/$id',
+        '${URLS.environment == "production" ? URLS.url[1] : URLS.url[0]}/user/student/update/password/$id',
         body: json.encode(password),
         headers: {
           HttpHeaders.contentTypeHeader: 'application/json',

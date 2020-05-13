@@ -11,7 +11,7 @@ class _JobState extends State<Job> {
   final TextStyle dropdownMenuItem =
       TextStyle(color: Colors.black, fontSize: 18);
 
-  final primary = Color.fromRGBO(220, 20, 47, 0.7);
+  final primary = Color(0xff696b9e);
   final secondary = Color(0xfff29a94);
 
   final List<Map> competitionLists = [
@@ -99,7 +99,7 @@ class _JobState extends State<Job> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        "Competitions",
+                        "Jobs",
                         style: TextStyle(color: Colors.white, fontSize: 24),
                       ),
                     ],
@@ -122,7 +122,7 @@ class _JobState extends State<Job> {
                           cursorColor: Theme.of(context).primaryColor,
                           style: dropdownMenuItem,
                           decoration: InputDecoration(
-                              hintText: "Search Competitions",
+                              hintText: "Search Jobs",
                               hintStyle: TextStyle(
                                   color: Colors.black38, fontSize: 16),
                               prefixIcon: Material(
@@ -136,6 +136,9 @@ class _JobState extends State<Job> {
                                   horizontal: 25, vertical: 13)),
                         ),
                       ),
+                    ),
+                    SizedBox(
+                      height: 30,
                     ),
                   ],
                 ),

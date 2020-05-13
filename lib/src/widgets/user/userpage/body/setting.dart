@@ -29,14 +29,6 @@ class _SettingsState extends State<Settings> {
           Divider(),
           ListTile(
             trailing: Icon(Icons.keyboard_arrow_right),
-            title: Text("Chats"),
-            onTap: () {
-              Navigator.of(context).pushNamed('/user/settings/chats');
-            },
-          ),
-          Divider(),
-          ListTile(
-            trailing: Icon(Icons.keyboard_arrow_right),
             title: Text("Privacy"),
             onTap: () {
               Navigator.of(context).pushNamed('/user/settings/privacy');

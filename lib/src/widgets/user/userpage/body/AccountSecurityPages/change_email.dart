@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart' as vd;
 
-var bg = 0xFF784ADE;
-
 class ChangeEmail extends StatefulWidget {
   @override
   _ChangeEmailState createState() => _ChangeEmailState();
@@ -17,7 +15,7 @@ class _ChangeEmailState extends State<ChangeEmail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(bg),
+        backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
         title: Text("Account Security"),
       ),
       body: Container(
@@ -53,11 +51,17 @@ class _ChangeEmailState extends State<ChangeEmail> {
       decoration: InputDecoration(
           hintText: "example@123.com",
           labelText: "New email",
-          labelStyle: TextStyle(color: Color(bg)),
-          enabledBorder:
-              OutlineInputBorder(borderSide: BorderSide(color: Color(bg))),
-          focusedBorder:
-              OutlineInputBorder(borderSide: BorderSide(color: Color(bg))),
+          labelStyle: TextStyle(
+            color: Color.fromRGBO(220, 20, 47, 0.7),
+          ),
+          enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+            color: Color.fromRGBO(220, 20, 47, 0.7),
+          )),
+          focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+            color: Color.fromRGBO(220, 20, 47, 0.7),
+          )),
           focusedErrorBorder:
               OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
           errorBorder:
@@ -86,7 +90,7 @@ class _ChangeEmailState extends State<ChangeEmail> {
       minWidth: MediaQuery.of(context).size.width,
       height: 50,
       child: RaisedButton(
-        color: Color(bg),
+        color: Color.fromRGBO(220, 20, 47, 0.7),
         child: Text(
           "Update",
           style:

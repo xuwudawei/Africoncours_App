@@ -7,8 +7,6 @@ import 'package:loading/indicator/ball_spin_fade_loader_indicator.dart';
 import 'package:loading/loading.dart';
 import 'package:provider/provider.dart';
 
-var bg = 0xFF784ADE;
-
 class ChangePhoneNumber extends StatefulWidget {
   @override
   _ChangePhoneNumberState createState() => _ChangePhoneNumberState();
@@ -27,7 +25,7 @@ class _ChangePhoneNumberState extends State<ChangePhoneNumber> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(bg),
+        backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
         title: Text("Account Security"),
       ),
       body: Container(
@@ -93,12 +91,12 @@ class _ChangePhoneNumberState extends State<ChangePhoneNumber> {
                 hintText: "0244581027",
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Color(bg),
+                    color: Color.fromRGBO(220, 20, 47, 0.7),
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Color(bg),
+                    color: Color.fromRGBO(220, 20, 47, 0.7),
                   ),
                 ),
                 focusedErrorBorder: OutlineInputBorder(
@@ -127,7 +125,9 @@ class _ChangePhoneNumberState extends State<ChangePhoneNumber> {
                 }
               },
             ),
-            data: Theme.of(context).copyWith(primaryColor: Color(bg)),
+            data: Theme.of(context).copyWith(
+              primaryColor: Color.fromRGBO(220, 20, 47, 0.7),
+            ),
           ),
         ),
       ],
@@ -139,7 +139,7 @@ class _ChangePhoneNumberState extends State<ChangePhoneNumber> {
       minWidth: MediaQuery.of(context).size.width,
       height: 50,
       child: RaisedButton(
-        color: Color(bg),
+        color: Color.fromRGBO(220, 20, 47, 0.7),
         child: Text(
           "Update",
           style:

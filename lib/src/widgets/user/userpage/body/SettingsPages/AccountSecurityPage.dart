@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-var color = 0xFF784ADE;
-
 class Account extends StatefulWidget {
   @override
   _AccountState createState() => _AccountState();
@@ -13,7 +11,7 @@ class _AccountState extends State<Account> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Account Security'),
-        backgroundColor: Color(color),
+        backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -25,7 +23,7 @@ class _AccountState extends State<Account> {
               title: Text("Change Password"),
               onTap: () {
                 Navigator.of(context).pushNamed(
-                    '/student/settings/changepassword'); //change passowrd page
+                    '/user/settings/changepassword'); //change passowrd page
               },
             ),
             Divider(),
@@ -35,7 +33,7 @@ class _AccountState extends State<Account> {
               title: Text("Change Phone Number"),
               onTap: () {
                 Navigator.of(context).pushNamed(
-                    '/student/settings/changephonenumber'); //change number page
+                    '/user/settings/changephonenumber'); //change number page
               },
             ),
             Divider(),
@@ -45,7 +43,7 @@ class _AccountState extends State<Account> {
               title: Text("Change Email"),
               onTap: () {
                 Navigator.of(context).pushNamed(
-                    '/student/settings/changeemail'); //change email page
+                    '/user/settings/changeemail'); //change email page
               },
             ),
             Divider(),

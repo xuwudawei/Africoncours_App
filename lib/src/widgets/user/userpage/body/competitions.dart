@@ -94,12 +94,13 @@ class _CompetitionState extends State<Competition> {
                         bottomLeft: Radius.circular(30),
                         bottomRight: Radius.circular(30))),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  padding: const EdgeInsets.symmetric(horizontal: 110),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
                         "Competitions",
+                        textAlign: TextAlign.center,
                         style: TextStyle(color: Colors.white, fontSize: 24),
                       ),
                     ],
@@ -136,6 +137,9 @@ class _CompetitionState extends State<Competition> {
                                   horizontal: 25, vertical: 13)),
                         ),
                       ),
+                    ),
+                    SizedBox(
+                      height: 30,
                     ),
                   ],
                 ),
