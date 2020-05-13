@@ -5,7 +5,6 @@ import '../widgets/user/userpage/body/AccountSecurityPages/change_email.dart';
 import '../widgets/user/userpage/body/AccountSecurityPages/change_phone_number.dart';
 
 import '../widgets/user/firstpage/firstpage.dart';
-import '../widgets/user/firstpage/userOption.dart';
 
 // Login Widget
 import '../widgets/user/login/userLogin.dart';
@@ -18,7 +17,7 @@ import '../widgets/user/firstpage/confirmEmail.dart';
 
 // Userpage
 import '../widgets/user/userpage/main.dart';
-import '../widgets/user/userpage/body/news/viewNewsPage.dart';
+import '../widgets/user/userpage/body/recentContests/viewNewsPage.dart';
 
 //Settings Page
 import '../widgets/user/userpage/body/SettingsPages/AccountSecurityPage.dart';
@@ -53,8 +52,6 @@ class RouteGenerator {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(builder: (_) => Cover());
-      case '/useroption':
-        return MaterialPageRoute(builder: (_) => UserOption());
       case '/user/login':
         return MaterialPageRoute(builder: (_) => UserLogin());
       case '/user/signup':

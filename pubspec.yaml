@@ -1,4 +1,4 @@
-name: gss_connect_app
+name: Africoncours_App
 description: A new Flutter project.
 
 # The following defines the version and build number for your application.
@@ -26,6 +26,9 @@ dependencies:
   intl: ^0.16.1
   shared_preferences: ^0.5.7
   firebase_storage: ^3.1.5
+  native_state: ^1.1.0
+  google_fonts: ^1.1.0
+  flutter_markdown: ^0.3.5
   flutter:
     sdk: flutter
 
@@ -39,6 +42,9 @@ dependencies:
   form_field_validator: ^1.0.1
   carousel_slider: ^2.0.0
   provider: ^4.0.5
+  file_picker: ^1.9.0+1
+  flutter_pdfview: ^1.0.0+10
+  
 
 dev_dependencies:
   flutter_test:

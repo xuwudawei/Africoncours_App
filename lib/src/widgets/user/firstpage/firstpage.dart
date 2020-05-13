@@ -21,7 +21,7 @@ class _CoversState extends State<Cover> {
           style: TextStyle(fontFamily: 'serif', fontSize: 30.0),
         ),
         onPressed: () {
-          Navigator.of(context).pushNamed('/useroption', arguments: "Turn");
+          Navigator.of(context).pushNamed('/user/login', arguments: "Turn");
         },
       ),
     );

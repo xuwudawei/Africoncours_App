@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 class ProfileUI extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final userInfo = Provider.of<UserInfoProvider>(context);
+    final studentInfo = Provider.of<UserInfoProvider>(context);
     return Scaffold(
         backgroundColor: Colors.grey.shade100,
         extendBodyBehindAppBar: true,
@@ -19,14 +19,14 @@ class ProfileUI extends StatelessWidget {
           child: Column(
             children: <Widget>[
               ProfileHeader(
-                avatar:
-                    CachedNetworkImageProvider(userInfo.getUserInfo["avatar"]),
-                coverImage:
-                    CachedNetworkImageProvider(userInfo.getUserInfo["avatar"]),
+                avatar: CachedNetworkImageProvider(
+                    studentInfo.getUserInfo["avatar"]),
+                coverImage: CachedNetworkImageProvider(
+                    studentInfo.getUserInfo["avatar"]),
                 title:
-                    "${userInfo.getUserInfo["firstname"]}${userInfo.getUserInfo["lastname"]}"
+                    "${studentInfo.getUserInfo["firstname"]}${studentInfo.getUserInfo["lastname"]}"
                         .toUpperCase(),
-                subtitle: userInfo.getUserInfo["email"],
+                subtitle: studentInfo.getUserInfo["email"],
                 actions: <Widget>[
                   MaterialButton(
                     color: Colors.white,
@@ -35,7 +35,7 @@ class ProfileUI extends StatelessWidget {
                     child: Icon(Icons.edit),
                     onPressed: () {
                       Navigator.of(context)
-                          .pushNamed('/user/profile/Edit/selectionPage');
+                          .pushNamed('/student/profile/Edit/selectionPage');
                     },
                   )
                 ],
@@ -51,7 +51,7 @@ class ProfileUI extends StatelessWidget {
 class UserInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final userInfo = Provider.of<UserInfoProvider>(context);
+    final studentInfo = Provider.of<UserInfoProvider>(context);
     return Container(
       padding: EdgeInsets.all(10),
       child: Column(
@@ -81,32 +81,39 @@ class UserInfo extends StatelessWidget {
                         color: Colors.grey,
                         tiles: [
                           ListTile(
+                            contentPadding: EdgeInsets.symmetric(
+                                horizontal: 12, vertical: 4),
+                            leading: Icon(Icons.my_location),
+                            title: Text("Institution"),
+                            subtitle: Text(studentInfo.getUserInfo["school"]),
+                          ),
+                          ListTile(
                             leading: Icon(Icons.email),
                             title: Text("Email"),
-                            subtitle: Text(userInfo.getUserInfo["email"]),
+                            subtitle: Text(studentInfo.getUserInfo["email"]),
                           ),
                           ListTile(
                             leading: Icon(Icons.phone),
                             title: Text("Phone"),
-                            subtitle: Text(userInfo.getUserInfo["phone"]),
+                            subtitle: Text(studentInfo.getUserInfo["phone"]),
                           ),
                           ListTile(
-                            leading: Icon(Icons.event_note),
+                            leading: Icon(Icons.person),
                             title: Text("About Me"),
                             subtitle: Text(
                                 "This is a about me link and you can know about me in this section."),
                           ),
                           ListTile(
-                            leading: Icon(Icons.explore),
+                            leading: Icon(Icons.person),
                             title: Text("Current Address"),
-                            subtitle:
-                                Text(userInfo.getUserInfo["current_address"]),
+                            subtitle: Text(
+                                studentInfo.getUserInfo["current_address"]),
                           ),
                           ListTile(
-                            leading: Icon(Icons.explore),
+                            leading: Icon(Icons.person),
                             title: Text("Permanent Address"),
-                            subtitle:
-                                Text(userInfo.getUserInfo["permanent_address"]),
+                            subtitle: Text(
+                                studentInfo.getUserInfo["permanent_address"]),
                           ),
                         ],
                       ),
