@@ -40,7 +40,10 @@ import '../widgets/user/userpage/body/SideMenuJobs.dart';
 import '../widgets/user/userpage/body/competitions.dart';
 import '../widgets/user/userpage/body/appliedJobs.dart';
 import '../widgets/user/userpage/body/appliedCompetitions.dart';
-import '../widgets/user/userpage/body/messages.dart';
+
+//Chats Pages
+import '../widgets/user/userpage/body/ChatPages/ui/screens/home.dart';
+import '../widgets/user/userpage/body/ChatPages/chatLandingPage.dart';
 
 //Student Profile Pages
 import '../widgets/user/userpage/body/UserProfilePage/profile.dart';
@@ -113,7 +116,7 @@ class RouteGenerator {
       case '/user/sidemenu/appliedCompetitions':
         return MaterialPageRoute(builder: (_) => AppliedCompetition());
       case '/user/sidemenu/messages':
-        return MaterialPageRoute(builder: (_) => Message());
+        return MaterialPageRoute(builder: (_) => ChatLanding());
     }
   }
 }
