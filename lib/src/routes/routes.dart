@@ -9,6 +9,7 @@ import '../widgets/user/firstpage/firstpage.dart';
 
 // Login Widget
 import '../widgets/user/login/userLogin.dart';
+import '../widgets/user/login/resetPasswordPage.dart';
 
 // Signup Widgets
 import '../widgets/user/signup/userSignUp.dart';
@@ -19,6 +20,7 @@ import '../widgets/user/firstpage/confirmEmail.dart';
 // Userpage
 import '../widgets/user/userpage/main.dart';
 import '../widgets/user/userpage/body/recentContests/viewNewsPage.dart';
+import '../widgets/user/userpage/body/jobs.dart';
 
 //Settings Page
 import '../widgets/user/userpage/body/SettingsPages/AccountSecurityPage.dart';
@@ -34,7 +36,7 @@ import '../widgets/user/userpage/body/AccountSecurityPages/change_password.dart'
 //Side Menu Pages
 import '../widgets/user/userpage/body/news.dart';
 import '../widgets/user/userpage/body/SettingsPages/SideMenuSettings.dart';
-import '../widgets/user/userpage/body/jobs.dart';
+import '../widgets/user/userpage/body/SideMenuJobs.dart';
 import '../widgets/user/userpage/body/competitions.dart';
 import '../widgets/user/userpage/body/appliedJobs.dart';
 import '../widgets/user/userpage/body/appliedCompetitions.dart';
@@ -55,6 +57,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => Cover());
       case '/user/login':
         return MaterialPageRoute(builder: (_) => UserLogin());
+      case '/user/forgotPassword':
+        return MaterialPageRoute(builder: (_) => ResetPassword());
       case '/user/signup':
         return MaterialPageRoute(builder: (_) => UserSignup());
       case '/confirm/email':
@@ -100,8 +104,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => ChangeProfilePicture());
       case '/user/profile/Edit/editUserInformation':
         return MaterialPageRoute(builder: (_) => EditUserInformation());
-      case '/user/sidemenu/jobs':
-        return MaterialPageRoute(builder: (_) => Job());
+      case '/user/sidemenu/sidemenujobs':
+        return MaterialPageRoute(builder: (_) => SideMenuJobs());
       case '/user/sidemenu/competitions':
         return MaterialPageRoute(builder: (_) => Competition());
       case '/user/sidemenu/appliedjobs':

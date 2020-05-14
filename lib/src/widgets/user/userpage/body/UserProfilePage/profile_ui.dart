@@ -35,7 +35,7 @@ class ProfileUI extends StatelessWidget {
                     child: Icon(Icons.edit),
                     onPressed: () {
                       Navigator.of(context)
-                          .pushNamed('/student/profile/Edit/selectionPage');
+                          .pushNamed('/user/profile/Edit/selectionPage');
                     },
                   )
                 ],

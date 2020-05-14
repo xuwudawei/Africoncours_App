@@ -48,7 +48,7 @@ class _UserDrawerState extends State<UserDrawer> {
             leading: Icon(FontAwesomeIcons.graduationCap),
             title: Text("Jobs"),
             onTap: () {
-              Navigator.of(context).pushNamed('/user/sidemenu/jobs');
+              Navigator.of(context).pushNamed('/user/sidemenu/sidemenujobs');
             },
           ),
           ListTile(

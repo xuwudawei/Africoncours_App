@@ -236,7 +236,7 @@ class _UserLoginState extends State<UserLogin> {
           Center(
               child: GestureDetector(
             onTap: () {
-              Navigator.of(context).pushNamed('');
+              Navigator.of(context).pushNamed('/user/forgotPassword');
             },
             child: Text(
               "FORGOT PASSWORD ?",

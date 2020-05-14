@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-class Job extends StatefulWidget {
+class SideMenuJobs extends StatefulWidget {
   @override
-  _JobState createState() => _JobState();
-  Job({Key key}) : super(key: key);
+  _SideMenuJobsState createState() => _SideMenuJobsState();
+  SideMenuJobs({Key key}) : super(key: key);
 }
 
-class _JobState extends State<Job> {
+class _SideMenuJobsState extends State<SideMenuJobs> {
   final TextStyle dropdownMenuItem =
       TextStyle(color: Colors.black, fontSize: 18);
 
@@ -86,7 +86,7 @@ class _JobState extends State<Job> {
                     }),
               ),
               Container(
-                height: 80,
+                height: 140,
                 width: double.infinity,
                 decoration: BoxDecoration(
                     color: primary,
@@ -100,7 +100,8 @@ class _JobState extends State<Job> {
                     children: <Widget>[
                       Text(
                         "Jobs",
-                        style: TextStyle(color: Colors.white, fontSize: 21),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white, fontSize: 24),
                       ),
                     ],
                   ),
@@ -110,7 +111,7 @@ class _JobState extends State<Job> {
                 child: Column(
                   children: <Widget>[
                     SizedBox(
-                      height: 90,
+                      height: 110,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
@@ -137,9 +138,7 @@ class _JobState extends State<Job> {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: 30,
-                    ),
+                    SizedBox(),
                   ],
                 ),
               )

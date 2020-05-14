@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart' as vd;
 
-var bg = 0xFF784ADE;
- GlobalKey<ScaffoldState> _scaffold = GlobalKey<ScaffoldState>();
+GlobalKey<ScaffoldState> _scaffold = GlobalKey<ScaffoldState>();
+
 class ResetPassword extends StatefulWidget {
   @override
   _ResetPasswordState createState() => _ResetPasswordState();
 }
 
 class _ResetPasswordState extends State<ResetPassword> {
-   final formkey = GlobalKey<FormState>();
- 
+  final formkey = GlobalKey<FormState>();
+
   var validEmail = null;
   final formKey = GlobalKey<FormState>();
   var emails;
@@ -19,9 +19,11 @@ class _ResetPasswordState extends State<ResetPassword> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(bg),
-        title: Text("Forgot Password",
-        textAlign: TextAlign.center,),
+        backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
+        title: Text(
+          "Forgot Password",
+          textAlign: TextAlign.center,
+        ),
       ),
       body: Container(
           padding: EdgeInsets.only(left: 40, right: 40),
@@ -56,11 +58,17 @@ class _ResetPasswordState extends State<ResetPassword> {
       decoration: InputDecoration(
           hintText: "example@123.com",
           labelText: "Email",
-          labelStyle: TextStyle(color: Color(bg)),
-          enabledBorder:
-              OutlineInputBorder(borderSide: BorderSide(color: Color(bg))),
-          focusedBorder:
-              OutlineInputBorder(borderSide: BorderSide(color: Color(bg))),
+          labelStyle: TextStyle(
+            color: Color.fromRGBO(220, 20, 47, 0.7),
+          ),
+          enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+            color: Color.fromRGBO(220, 20, 47, 0.7),
+          )),
+          focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+            color: Color.fromRGBO(220, 20, 47, 0.7),
+          )),
           focusedErrorBorder:
               OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
           errorBorder:
@@ -89,7 +97,7 @@ class _ResetPasswordState extends State<ResetPassword> {
       minWidth: MediaQuery.of(context).size.width,
       height: 50,
       child: RaisedButton(
-        color: Color(bg),
+        color: Color.fromRGBO(220, 20, 47, 0.7),
         child: Text(
           "Send Password Reset Link",
           style:
@@ -104,16 +112,16 @@ class _ResetPasswordState extends State<ResetPassword> {
 }
 
 showDoneSnackBar() {
-    final snackbar = SnackBar(
-      backgroundColor: Color(bg),
-      content: Text(
-        "Check your email for password reset link",
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 15,
-        ),
+  final snackbar = SnackBar(
+    backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
+    content: Text(
+      "Check your email for password reset link",
+      textAlign: TextAlign.center,
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: 15,
       ),
-    );
-    _scaffold.currentState.showSnackBar(snackbar);
-  }
+    ),
+  );
+  _scaffold.currentState.showSnackBar(snackbar);
+}
