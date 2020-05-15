@@ -84,7 +84,7 @@ class _UserDrawerState extends State<UserDrawer> {
                 "20",
                 style: TextStyle(color: Colors.white),
               ),
-              backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
+              backgroundColor: Color.fromRGBO(37, 211, 102, 1),
             ),
           ),
           Divider(),
@@ -103,7 +103,7 @@ class _UserDrawerState extends State<UserDrawer> {
         ],
       ),
       data: Theme.of(context).copyWith(
-        primaryColor: Color.fromRGBO(220, 20, 47, 0.7),
+        primaryColor: Color.fromRGBO(37, 211, 102, 1),
       ),
     );
   }

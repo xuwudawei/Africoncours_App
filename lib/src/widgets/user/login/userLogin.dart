@@ -14,6 +14,8 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../request/login.dart';
 
+var clr = Color.fromRGBO(74, 201, 89, 1);
+
 GlobalKey<ScaffoldState> _scaffold = new GlobalKey<ScaffoldState>();
 
 class UserLogin extends StatefulWidget {
@@ -56,7 +58,13 @@ class _UserLoginState extends State<UserLogin> {
                   height: 300,
                   decoration: BoxDecoration(
                       gradient: LinearGradient(
-                          colors: [Color(0x22ff3a5a), Color(0x22fe494d)])),
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          tileMode: TileMode.repeated,
+                          colors: [
+                        Color.fromRGBO(74, 201, 89, 1),
+                        Colors.blue[200],
+                      ])),
                 ),
               ),
               ClipPath(
@@ -66,8 +74,8 @@ class _UserLoginState extends State<UserLogin> {
                   width: double.infinity,
                   height: 300,
                   decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          colors: [Color(0x44ff3a5a), Color(0x44fe494d)])),
+                      gradient:
+                          LinearGradient(colors: [clr, Color(0x44fe494d)])),
                 ),
               ),
               ClipPath(
@@ -76,32 +84,26 @@ class _UserLoginState extends State<UserLogin> {
                   child: Column(
                     children: <Widget>[
                       SizedBox(
-                        height: 40,
-                      ),
-                      Icon(
-                        Icons.fiber_manual_record,
-                        color: Colors.white,
-                        size: 60,
-                      ),
-                      SizedBox(
-                        height: 20,
+                        height: 80,
                       ),
                       Text(
                         "Africoncours",
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w700,
-                            fontSize: 30),
+                            fontSize: 40),
                       ),
                     ],
                   ),
                   width: double.infinity,
                   height: 300,
                   decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: [
-                    Color.fromRGBO(220, 20, 47, 0.7),
-                    Color(0xfffe494d)
-                  ])),
+                      gradient: LinearGradient(
+                    colors: [
+                      clr,
+                      Color.fromRGBO(0, 0, 255, .3),
+                    ],
+                  )),
                 ),
               ),
             ],
@@ -114,7 +116,7 @@ class _UserLoginState extends State<UserLogin> {
                   padding: EdgeInsets.all(5),
                   child: Text(
                     "Invalid email or password",
-                    style: TextStyle(color: Color.fromRGBO(220, 20, 47, 0.7)),
+                    style: TextStyle(color: Color.fromRGBO(74, 201, 89, 1)),
                   ),
                 )
               : Text("")),
@@ -123,7 +125,7 @@ class _UserLoginState extends State<UserLogin> {
                   padding: EdgeInsets.all(5),
                   child: Text(
                     "No such account exists",
-                    style: TextStyle(color: Color.fromRGBO(220, 20, 47, 0.7)),
+                    style: TextStyle(color: Color.fromRGBO(74, 201, 89, 1)),
                   ),
                 )
               : Text("")),
@@ -133,7 +135,7 @@ class _UserLoginState extends State<UserLogin> {
               elevation: 2.0,
               borderRadius: BorderRadius.all(Radius.circular(30)),
               child: TextFormField(
-                cursorColor: Color.fromRGBO(220, 20, 47, 0.7),
+                cursorColor: Color.fromRGBO(74, 201, 89, 1),
                 decoration: InputDecoration(
                     hintText: "Email",
                     prefixIcon: Material(
@@ -141,7 +143,7 @@ class _UserLoginState extends State<UserLogin> {
                       borderRadius: BorderRadius.all(Radius.circular(30)),
                       child: Icon(
                         Icons.email,
-                        color: Color.fromRGBO(220, 20, 47, 0.7),
+                        color: Color.fromRGBO(74, 201, 89, .9),
                       ),
                     ),
                     border: InputBorder.none,
@@ -180,7 +182,7 @@ class _UserLoginState extends State<UserLogin> {
               elevation: 2.0,
               borderRadius: BorderRadius.all(Radius.circular(30)),
               child: TextFormField(
-                cursorColor: Colors.deepOrange,
+                cursorColor: Color.fromRGBO(74, 201, 89, .9),
                 decoration: InputDecoration(
                     hintText: "Password",
                     prefixIcon: Material(
@@ -188,7 +190,7 @@ class _UserLoginState extends State<UserLogin> {
                       borderRadius: BorderRadius.all(Radius.circular(30)),
                       child: Icon(
                         Icons.lock,
-                        color: Color.fromRGBO(220, 20, 47, 0.7),
+                        color: Color.fromRGBO(74, 201, 89, .9),
                       ),
                     ),
                     border: InputBorder.none,
@@ -214,7 +216,7 @@ class _UserLoginState extends State<UserLogin> {
               child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(100)),
-                    color: Color(0xffff3a5a)),
+                    color: Color.fromRGBO(74, 201, 89, .9)),
                 child: FlatButton(
                     child: Text(
                       "Login",
@@ -241,7 +243,7 @@ class _UserLoginState extends State<UserLogin> {
             child: Text(
               "FORGOT PASSWORD ?",
               style: TextStyle(
-                  color: Color.fromRGBO(220, 20, 47, 0.7),
+                  color: Color.fromRGBO(74, 201, 89, .9),
                   fontSize: 12,
                   fontWeight: FontWeight.w700),
             ),
@@ -366,7 +368,7 @@ class WaveClipper2 extends CustomClipper<Path> {
 Widget loadingWidget() {
   return Center(
     child: Loading(
-      color: Colors.pink,
+      color: Color.fromRGBO(74, 201, 89, 1),
       indicator: BallSpinFadeLoaderIndicator(),
       size: 50,
     ),

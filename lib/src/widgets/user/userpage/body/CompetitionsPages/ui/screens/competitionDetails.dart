@@ -149,7 +149,9 @@ class CompetitionDetailsScreen extends StatelessWidget {
                               .button
                               .apply(color: Colors.white),
                         ),
-                        color: _active ? Colors.blue : Colors.grey[600],
+                        color: _active
+                            ? Color.fromRGBO(37, 211, 102, 1)
+                            : Colors.grey[600],
                         onPressed: () {
                           if (_active) {
                             print("yes");

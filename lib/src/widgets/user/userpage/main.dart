@@ -58,7 +58,7 @@ class _UserPageState extends State<UserPage> {
     // userInfo.setUserInfo();
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
+        backgroundColor: Color.fromRGBO(37, 211, 102, 1),
         actions: <Widget>[
           PopupMenuButton(
             itemBuilder: (context) => <PopupMenuEntry>[
@@ -104,7 +104,7 @@ class _UserPageState extends State<UserPage> {
           .elementAt(selectedNav),
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
-          primaryColor: Color.fromRGBO(220, 20, 47, 0.7),
+          primaryColor: Color.fromRGBO(37, 211, 102, 1),
         ),
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,

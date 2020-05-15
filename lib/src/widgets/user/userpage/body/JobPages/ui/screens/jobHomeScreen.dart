@@ -14,6 +14,7 @@ class _JobHomeScreenState extends State<JobHomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(37, 211, 102, 1),
         title: Text("Africoncours Job Portal"),
       ),
       //backgroundColor: Colors.blue,

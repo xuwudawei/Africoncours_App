@@ -130,7 +130,7 @@ class DetailsScreen extends StatelessWidget {
                               .button
                               .apply(color: Colors.white),
                         ),
-                        color: Colors.blue,
+                        color: Color.fromRGBO(37, 211, 102, 1),
                         onPressed: () {},
                       ),
                     )

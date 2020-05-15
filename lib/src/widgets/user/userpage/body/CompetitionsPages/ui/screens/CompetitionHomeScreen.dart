@@ -14,6 +14,7 @@ class _CompetitionHomeScreenState extends State<CompetitionHomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(37, 211, 102, 1),
         title: Text("Available Competitions"),
       ),
       //backgroundColor: Colors.blue,
