@@ -37,6 +37,7 @@ import '../widgets/user/userpage/body/AccountSecurityPages/change_password.dart'
 import '../widgets/user/userpage/body/news.dart';
 import '../widgets/user/userpage/body/SettingsPages/SideMenuSettings.dart';
 import '../widgets/user/userpage/body/SideMenuJobs.dart';
+import '../widgets/user/userpage/body/JobPages/ui/screens/jobHomeScreen.dart';
 import '../widgets/user/userpage/body/competitions.dart';
 import '../widgets/user/userpage/body/appliedJobs.dart';
 import '../widgets/user/userpage/body/appliedCompetitions.dart';
@@ -108,7 +109,7 @@ class RouteGenerator {
       case '/user/profile/Edit/editUserInformation':
         return MaterialPageRoute(builder: (_) => EditUserInformation());
       case '/user/sidemenu/sidemenujobs':
-        return MaterialPageRoute(builder: (_) => SideMenuJobs());
+        return MaterialPageRoute(builder: (_) => JobHomeScreen());
       case '/user/sidemenu/competitions':
         return MaterialPageRoute(builder: (_) => Competition());
       case '/user/sidemenu/appliedjobs':

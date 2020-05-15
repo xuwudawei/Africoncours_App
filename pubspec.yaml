@@ -20,7 +20,7 @@ dependencies:
   image_picker: ^0.6.3+1
   image_cropper: ^1.2.0
   preferences: ^5.2.0
-  cached_network_image: ^2.1.0+1
+  cached_network_image: ^2.2.0+1
   flutter_country_picker: ^0.1.6
   loading: ^1.0.2
   intl: ^0.16.1
@@ -56,6 +56,10 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
+  assets:
+    - assets/images/pic1.jpg
+    - assets/images/google.jpg
+    - assets/images/programming.jpg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
