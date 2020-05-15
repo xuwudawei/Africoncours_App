@@ -7,10 +7,11 @@ class CompetitionContainer extends StatelessWidget {
     @required this.title,
     @required this.location,
     @required this.description,
-    @required this.salary,
+    @required this.cost,
+    @required this.date,
     @required this.onTap,
   }) : super(key: key);
-  final String iconUrl, title, location, description, salary;
+  final String iconUrl, title, location, description, cost, date;
   final Function onTap;
   @override
   Widget build(BuildContext context) {
@@ -76,7 +77,12 @@ class CompetitionContainer extends StatelessWidget {
             ),
             SizedBox(height: 9),
             Text(
-              "$salary",
+              "$cost",
+              style:
+                  Theme.of(context).textTheme.subhead.apply(fontWeightDelta: 2),
+            ),
+            Text(
+              "$date",
               style:
                   Theme.of(context).textTheme.subhead.apply(fontWeightDelta: 2),
             )

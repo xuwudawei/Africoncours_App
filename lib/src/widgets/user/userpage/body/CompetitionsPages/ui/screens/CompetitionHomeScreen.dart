@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../global.dart';
+import '../../competitionGlobal.dart';
 
-import '../screens/screens.dart';
-import '../widgets/widgets.dart';
+import '../screens/competitionDetails.dart';
+import '../widgets/competitionWidgets.dart';
 
 class CompetitionHomeScreen extends StatefulWidget {
   @override
@@ -40,18 +40,19 @@ class _CompetitionHomeScreenState extends State<CompetitionHomeScreen> {
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: jobList.length,
+                itemCount: competitionsList.length,
                 itemBuilder: (ctx, i) {
-                  return JobContainer(
-                    description: jobList[i].description,
-                    iconUrl: jobList[i].iconUrl,
-                    location: jobList[i].location,
-                    salary: jobList[i].salary,
-                    title: jobList[i].title,
+                  return CompetitionContainer(
+                    description: competitionsList[i].description,
+                    iconUrl: competitionsList[i].iconUrl,
+                    location: competitionsList[i].location,
+                    cost: competitionsList[i].cost,
+                    title: competitionsList[i].title,
+                    date: competitionsList[i].date,
                     onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (ctx) => DetailsScreen(id: i),
+                        builder: (ctx) => CompetitionDetailsScreen(id: i),
                       ),
                     ),
                   );

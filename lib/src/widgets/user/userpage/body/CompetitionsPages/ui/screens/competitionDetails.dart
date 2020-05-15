@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../global.dart';
+import '../../competitionGlobal.dart';
 
 class CompetitionDetailsScreen extends StatelessWidget {
   final int id;
@@ -67,11 +67,11 @@ class CompetitionDetailsScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      "${jobList[id].title}",
+                      "${competitionsList[id].title}",
                       style: Theme.of(context).textTheme.headline,
                     ),
                     Text(
-                      "${jobList[id].location}",
+                      "${competitionsList[id].location}",
                       style: Theme.of(context)
                           .textTheme
                           .body2
@@ -85,7 +85,7 @@ class CompetitionDetailsScreen extends StatelessWidget {
                       style: Theme.of(context).textTheme.subhead,
                     ),
                     Text(
-                      "${jobList[id].description}",
+                      "${competitionsList[id].description}",
                       style: Theme.of(context)
                           .textTheme
                           .body2
@@ -104,7 +104,7 @@ class CompetitionDetailsScreen extends StatelessWidget {
                       height: 80,
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
-                        itemCount: jobList[id].photos.length,
+                        itemCount: competitionsList[id].photos.length,
                         itemBuilder: (ctx, i) {
                           return Padding(
                             padding:

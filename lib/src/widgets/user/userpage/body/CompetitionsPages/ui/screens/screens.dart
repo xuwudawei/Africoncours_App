@@ -1,2 +1,2 @@
 export 'JobHomeScreen.dart';
-export 'details.dart';
+export 'competitionDetails.dart';

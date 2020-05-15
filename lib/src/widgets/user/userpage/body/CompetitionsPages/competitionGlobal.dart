@@ -1,6 +1,6 @@
 import 'models/CompetitionData.dart';
 
-List<CompetitionModel> jobList = [
+List<CompetitionModel> competitionsList = [
   CompetitionModel(
     description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum culpa ab vitae, totam voluptatum laudantium excepturi accusantium, incidunt sunt quos nihil, odit consequuntur non modi vel veniam. Eligendi, dicta? Eius.",
