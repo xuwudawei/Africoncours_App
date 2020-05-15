@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import '../../competitionGlobal.dart';
 
 class CompetitionDetailsScreen extends StatelessWidget {
@@ -6,9 +7,15 @@ class CompetitionDetailsScreen extends StatelessWidget {
 
   const CompetitionDetailsScreen({Key key, @required this.id})
       : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+    bool _active = false;
+    var today = new DateTime.now();
+    DateTime competitionDate = DateTime.parse("${competitionsList[id].date}");
+    int result = competitionDate.compareTo(today);
+    if (result > 0) {
+      _active = true;
+    }
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -71,6 +78,10 @@ class CompetitionDetailsScreen extends StatelessWidget {
                       style: Theme.of(context).textTheme.headline,
                     ),
                     Text(
+                      "${competitionsList[id].date}",
+                      style: Theme.of(context).textTheme.headline,
+                    ),
+                    Text(
                       "${competitionsList[id].location}",
                       style: Theme.of(context)
                           .textTheme
@@ -93,7 +104,14 @@ class CompetitionDetailsScreen extends StatelessWidget {
                       maxLines: 3,
                     ),
                     SizedBox(
-                      height: 15.0,
+                      height: 5.0,
+                    ),
+                    Text(
+                      "Cost: ${competitionsList[id].cost}",
+                      style: Theme.of(context).textTheme.subhead,
+                    ),
+                    SizedBox(
+                      height: 10.0,
                     ),
                     Text(
                       "Photos",
@@ -125,14 +143,25 @@ class CompetitionDetailsScreen extends StatelessWidget {
                       height: 45,
                       child: RaisedButton(
                         child: Text(
-                          "Apply",
+                          _active ? "Apply" : "Expired",
                           style: Theme.of(context)
                               .textTheme
                               .button
                               .apply(color: Colors.white),
                         ),
-                        color: Colors.blue,
-                        onPressed: () {},
+                        color: _active ? Colors.blue : Colors.grey[600],
+                        onPressed: () {
+                          if (_active) {
+                            print("yes");
+                            print(result);
+                            print(_active);
+                          } else {
+                            print(result);
+                            print("No");
+                            print(today);
+                            print("${competitionsList[id].date}");
+                          }
+                        },
                       ),
                     )
                   ],
@@ -145,3 +174,38 @@ class CompetitionDetailsScreen extends StatelessWidget {
     );
   }
 }
+
+// class ApplyButton extends StatefulWidget {
+//   @override
+//   _ApplyButtonState createState() => _ApplyButtonState();
+// }
+
+// class _ApplyButtonState extends State<ApplyButton> {
+//   @override
+//   bool _active = false;
+//   void _statusChecker() {
+//     if (true) {
+//       _active = true;
+//     }
+//   }
+
+//   Widget build(BuildContext context) {
+//     return GestureDetector(
+//       child: RaisedButton
+//       (
+//         child: Text(
+//           _active ? "Apply" : "Expired",
+//           style: Theme.of(context).textTheme.button.apply(color: Colors.white),
+//         ),
+//         color: _active ? Colors.blue : Colors.grey[600],
+//         onPressed: () {
+//           if (_active) {
+//             print("yes");
+//           } else {
+//             print("No");
+//           }
+//         },
+//       ),
+//     );
+//   }
+// }

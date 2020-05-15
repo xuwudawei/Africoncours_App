@@ -35,9 +35,8 @@ import '../widgets/user/userpage/body/AccountSecurityPages/change_password.dart'
 //Side Menu Pages
 import '../widgets/user/userpage/body/news.dart';
 import '../widgets/user/userpage/body/SettingsPages/SideMenuSettings.dart';
-import '../widgets/user/userpage/body/BottomNavJobs.dart';
+import '../widgets/user/userpage/body/CompetitionsPages/ui/screens/CompetitionHomeScreen.dart';
 import '../widgets/user/userpage/body/JobPages/ui/screens/jobHomeScreen.dart';
-import '../widgets/user/userpage/body/competitions.dart';
 import '../widgets/user/userpage/body/appliedJobs.dart';
 import '../widgets/user/userpage/body/appliedCompetitions.dart';
 
@@ -110,7 +109,7 @@ class RouteGenerator {
       case '/user/sidemenu/sidemenujobs':
         return MaterialPageRoute(builder: (_) => JobHomeScreen());
       case '/user/sidemenu/competitions':
-        return MaterialPageRoute(builder: (_) => Competition());
+        return MaterialPageRoute(builder: (_) => CompetitionHomeScreen());
       case '/user/sidemenu/appliedjobs':
         return MaterialPageRoute(builder: (_) => AppliedJob());
       case '/user/sidemenu/appliedCompetitions':
