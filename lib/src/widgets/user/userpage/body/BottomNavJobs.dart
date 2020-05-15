@@ -1,22 +1,18 @@
 import 'package:flutter/material.dart';
-import '../../global.dart';
+import '../../userpage/body/JobPages/global.dart';
 
-import '../screens/screens.dart';
-import '../widgets/widgets.dart';
+import '../body/JobPages/ui/screens/screens.dart';
+import '../body/JobPages/ui/widgets/widgets.dart';
 
-class JobHomeScreen extends StatefulWidget {
+class BottomNavJobs extends StatefulWidget {
   @override
-  _JobHomeScreenState createState() => _JobHomeScreenState();
+  _BottomNavJobsState createState() => _BottomNavJobsState();
 }
 
-class _JobHomeScreenState extends State<JobHomeScreen> {
+class _BottomNavJobsState extends State<BottomNavJobs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Africoncours Job Portal"),
-      ),
-      //backgroundColor: Colors.blue,
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,

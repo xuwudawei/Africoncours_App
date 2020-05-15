@@ -20,7 +20,6 @@ import '../widgets/user/firstpage/confirmEmail.dart';
 // Userpage
 import '../widgets/user/userpage/main.dart';
 import '../widgets/user/userpage/body/recentContests/viewNewsPage.dart';
-import '../widgets/user/userpage/body/jobs.dart';
 
 //Settings Page
 import '../widgets/user/userpage/body/SettingsPages/AccountSecurityPage.dart';
@@ -36,7 +35,7 @@ import '../widgets/user/userpage/body/AccountSecurityPages/change_password.dart'
 //Side Menu Pages
 import '../widgets/user/userpage/body/news.dart';
 import '../widgets/user/userpage/body/SettingsPages/SideMenuSettings.dart';
-import '../widgets/user/userpage/body/SideMenuJobs.dart';
+import '../widgets/user/userpage/body/BottomNavJobs.dart';
 import '../widgets/user/userpage/body/JobPages/ui/screens/jobHomeScreen.dart';
 import '../widgets/user/userpage/body/competitions.dart';
 import '../widgets/user/userpage/body/appliedJobs.dart';

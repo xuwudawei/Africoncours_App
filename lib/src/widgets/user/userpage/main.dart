@@ -8,7 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'body/homepage.dart';
 import 'body/news.dart';
 import 'body/setting.dart';
-import 'body/jobs.dart';
+import 'body/BottomNavJobs.dart';
 
 // Drawer import
 import 'body/userDrawer.dart';
@@ -100,7 +100,8 @@ class _UserPageState extends State<UserPage> {
       drawer: Drawer(
         child: UserDrawer(),
       ),
-      body: [Homepage(), Ongoing(), Job(), Settings()].elementAt(selectedNav),
+      body: [Homepage(), Ongoing(), BottomNavJobs(), Settings()]
+          .elementAt(selectedNav),
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
           primaryColor: Color.fromRGBO(220, 20, 47, 0.7),

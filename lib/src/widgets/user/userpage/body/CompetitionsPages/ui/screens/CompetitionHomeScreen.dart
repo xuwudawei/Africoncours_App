@@ -4,17 +4,17 @@ import '../../global.dart';
 import '../screens/screens.dart';
 import '../widgets/widgets.dart';
 
-class JobHomeScreen extends StatefulWidget {
+class CompetitionHomeScreen extends StatefulWidget {
   @override
-  _JobHomeScreenState createState() => _JobHomeScreenState();
+  _CompetitionHomeScreenState createState() => _CompetitionHomeScreenState();
 }
 
-class _JobHomeScreenState extends State<JobHomeScreen> {
+class _CompetitionHomeScreenState extends State<CompetitionHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Africoncours Job Portal"),
+        title: Text("Available Competitions"),
       ),
       //backgroundColor: Colors.blue,
       body: Container(
