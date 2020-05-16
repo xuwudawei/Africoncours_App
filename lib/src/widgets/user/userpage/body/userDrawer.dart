@@ -18,11 +18,11 @@ class _UserDrawerState extends State<UserDrawer> {
           Consumer<UserInfoProvider>(
             builder: (context, user, child) {
               return UserAccountsDrawerHeader(
-                accountEmail: Text(user.getUserInfo["email"]),
-                accountName: Text(
-                    "${user.getUserInfo["firstname"]} ${user.getUserInfo["lastname"]}"),
+                accountEmail: Text("xuwudawei@outlook.com"),
+                accountName: Text("David Osei Opoku"),
                 currentAccountPicture: CircleAvatar(
-                  backgroundImage: NetworkImage(user.getUserInfo["avatar"]),
+                  backgroundImage: NetworkImage(
+                      "https://avatars3.githubusercontent.com/u/57068034?s=460&u=d7eb15aed461ed917047aa35da504974596034e9&v=4"),
                 ),
               );
             },

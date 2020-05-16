@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 class ProfileUI extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final studentInfo = Provider.of<UserInfoProvider>(context);
     return Scaffold(
         backgroundColor: Colors.grey.shade100,
         extendBodyBehindAppBar: true,
@@ -20,13 +19,12 @@ class ProfileUI extends StatelessWidget {
             children: <Widget>[
               ProfileHeader(
                 avatar: CachedNetworkImageProvider(
-                    studentInfo.getUserInfo["avatar"]),
+                    "https://avatars3.githubusercontent.com/u/57068034?s=460&u=d7eb15aed461ed917047aa35da504974596034e9&v=4"),
                 coverImage: CachedNetworkImageProvider(
-                    studentInfo.getUserInfo["avatar"]),
-                title:
-                    "${studentInfo.getUserInfo["firstname"]}${studentInfo.getUserInfo["lastname"]}"
-                        .toUpperCase(),
-                subtitle: studentInfo.getUserInfo["email"],
+                  "https://avatars3.githubusercontent.com/u/57068034?s=460&u=d7eb15aed461ed917047aa35da504974596034e9&v=4",
+                ),
+                title: "David Osei Opoku".toUpperCase(),
+                subtitle: "xuwudawei@outlook.com",
                 actions: <Widget>[
                   MaterialButton(
                     color: Colors.white,
@@ -51,7 +49,6 @@ class ProfileUI extends StatelessWidget {
 class UserInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final studentInfo = Provider.of<UserInfoProvider>(context);
     return Container(
       padding: EdgeInsets.all(10),
       child: Column(
@@ -83,12 +80,12 @@ class UserInfo extends StatelessWidget {
                           ListTile(
                             leading: Icon(Icons.email),
                             title: Text("Email"),
-                            subtitle: Text(studentInfo.getUserInfo["email"]),
+                            subtitle: Text("xuwudawei@outlook.com"),
                           ),
                           ListTile(
                             leading: Icon(Icons.phone),
                             title: Text("Phone"),
-                            subtitle: Text(studentInfo.getUserInfo["phone"]),
+                            subtitle: Text("7382432408"),
                           ),
                           ListTile(
                             leading: Icon(Icons.person),
@@ -99,8 +96,7 @@ class UserInfo extends StatelessWidget {
                           ListTile(
                             leading: Icon(Icons.location_on),
                             title: Text("Current Address"),
-                            subtitle: Text(
-                                studentInfo.getUserInfo["current_address"]),
+                            subtitle: Text("India"),
                           ),
                         ],
                       ),

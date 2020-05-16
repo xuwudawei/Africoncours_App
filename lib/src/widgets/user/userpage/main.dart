@@ -81,7 +81,8 @@ class _UserPageState extends State<UserPage> {
             icon: Consumer<UserInfoProvider>(
               builder: (context, user, child) {
                 return CircleAvatar(
-                  backgroundImage: NetworkImage(user.getUserInfo["avatar"]),
+                  backgroundImage: NetworkImage(
+                      "https://avatars3.githubusercontent.com/u/57068034?s=460&u=d7eb15aed461ed917047aa35da504974596034e9&v=4"),
                 );
               },
             ),

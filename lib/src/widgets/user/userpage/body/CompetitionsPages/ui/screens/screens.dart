@@ -1,2 +1,2 @@
-export 'JobHomeScreen.dart';
+export '../../../JobPages/ui/screens/jobHomeScreen.dart';
 export 'competitionDetails.dart';
