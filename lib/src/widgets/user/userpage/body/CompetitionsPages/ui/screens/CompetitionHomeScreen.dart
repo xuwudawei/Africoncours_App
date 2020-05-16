@@ -12,6 +12,7 @@ class CompetitionHomeScreen extends StatefulWidget {
 
 class _CompetitionHomeScreenState extends State<CompetitionHomeScreen> {
   var _searchview = new TextEditingController();
+  TabController controller;
   bool _firstSearch = true;
   String _query = "";
 
@@ -20,6 +21,7 @@ class _CompetitionHomeScreenState extends State<CompetitionHomeScreen> {
   @override
   void initState() {
     super.initState();
+    //controller = new TabController(length: 4, vsync: this.);
     _nebulae = new List<String>();
     for (var a in competitionsList) {
       _nebulae.add(a.title);
@@ -66,8 +68,9 @@ class _CompetitionHomeScreenState extends State<CompetitionHomeScreen> {
 
   Widget _createSearchView() {
     return new Container(
-      decoration: BoxDecoration(border: Border.all(width: 1.0)),
+      //decoration: BoxDecoration(border: Border.all(width: 1.0)),
       child: new TextField(
+        controller: _searchview,
         decoration: InputDecoration(
           prefixIcon: Icon(Icons.search),
           hintText: "Search",
