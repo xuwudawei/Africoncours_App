@@ -21,7 +21,7 @@ class ChangeProfilePicture extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Change Profile Picture'),
-        backgroundColor: Color(color),
+        backgroundColor: Color.fromRGBO(37, 211, 102, 1),
       ),
       body: MyHomePage(),
     );
@@ -118,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     MaterialButton(
-                        color: Color.fromRGBO(220, 20, 47, 0.7),
+                        color: Color.fromRGBO(37, 211, 102, 1),
                         child: Text(
                           "Camera",
                           style: TextStyle(color: Colors.white),
@@ -127,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           getImage(ImageSource.camera);
                         }),
                     MaterialButton(
-                        color: Color.fromRGBO(220, 20, 47, 0.7),
+                        color: Color.fromRGBO(37, 211, 102, 1),
                         child: Text(
                           "Device",
                           style: TextStyle(color: Colors.white),
@@ -144,7 +144,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       "Update",
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
-                    color: Color.fromRGBO(220, 20, 47, 0.7),
+                    color: Color.fromRGBO(37, 211, 102, 1),
                     onPressed: (_selectedFile == null)
                         ? null
                         : () async {
@@ -180,7 +180,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Center(
       child: Loading(
         indicator: BallSpinFadeLoaderIndicator(),
-        color: Colors.pink,
+        color: Color.fromRGBO(37, 211, 102, 1),
         size: 50,
       ),
     );
@@ -189,7 +189,7 @@ class _MyHomePageState extends State<MyHomePage> {
   showSnapBar() {
     final snackBar = new SnackBar(
       duration: new Duration(seconds: 3),
-      backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
+      backgroundColor: Color.fromRGBO(37, 211, 102, 1),
       content: Text(
         "User Avatar updated successfully",
         textAlign: TextAlign.center,

@@ -19,7 +19,7 @@ class _HelpState extends State<Help> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Help & Feedback'),
-        backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
+        backgroundColor: Color.fromRGBO(37, 211, 102, 1),
       ),
       body: Container(
         margin: EdgeInsets.symmetric(horizontal: 16),
@@ -42,7 +42,7 @@ class _HelpState extends State<Help> {
                   hintText: "Title of Issue",
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
-                      color: Color.fromRGBO(220, 20, 47, 0.7),
+                      color: Color.fromRGBO(37, 211, 102, 1),
                       width: 2,
                     ),
                   ),
@@ -71,7 +71,7 @@ class _HelpState extends State<Help> {
                   hintText: "Description of Issue",
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
-                      color: Color.fromRGBO(220, 20, 47, 0.7),
+                      color: Color.fromRGBO(37, 211, 102, 1),
                       width: 2,
                     ),
                   ),
@@ -97,7 +97,7 @@ class _HelpState extends State<Help> {
                 minWidth: MediaQuery.of(context).size.width - 50,
                 height: 50,
                 child: RaisedButton(
-                  color: Color.fromRGBO(220, 20, 47, 0.7),
+                  color: Color.fromRGBO(37, 211, 102, 1),
                   child: Text(
                     "Submit",
                     style: TextStyle(color: Colors.white),
@@ -132,7 +132,7 @@ Widget loadingWidget() {
 
 showDoneSnackBar() {
   final snackbar = SnackBar(
-    backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
+    backgroundColor: Color.fromRGBO(37, 211, 102, 1),
     content: Text(
       "Feedback Submitted",
       textAlign: TextAlign.center,

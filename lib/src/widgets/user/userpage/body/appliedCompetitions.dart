@@ -11,7 +11,7 @@ class _AppliedCompetitionState extends State<AppliedCompetition> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Applied Competitions'),
-        backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
+        backgroundColor: Color.fromRGBO(37, 211, 102, 1),
       ),
       body: Text('Text Input'),
     );

@@ -182,6 +182,7 @@ class _UserLoginState extends State<UserLogin> {
               elevation: 2.0,
               borderRadius: BorderRadius.all(Radius.circular(30)),
               child: TextFormField(
+                obscureText: true,
                 cursorColor: Color.fromRGBO(74, 201, 89, .9),
                 decoration: InputDecoration(
                     hintText: "Password",

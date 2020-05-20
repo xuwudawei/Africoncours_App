@@ -11,7 +11,7 @@ class _EditUserInformationState extends State<EditUserInformation> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Edit User Information'),
-        backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
+        backgroundColor: Color.fromRGBO(37, 211, 102, 1),
       ),
     );
   }

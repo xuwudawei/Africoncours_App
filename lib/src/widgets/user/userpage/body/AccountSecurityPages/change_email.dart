@@ -15,7 +15,7 @@ class _ChangeEmailState extends State<ChangeEmail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
+        backgroundColor: Color.fromRGBO(37, 211, 102, 1),
         title: Text("Account Security"),
       ),
       body: Container(
@@ -52,15 +52,15 @@ class _ChangeEmailState extends State<ChangeEmail> {
           hintText: "example@123.com",
           labelText: "New email",
           labelStyle: TextStyle(
-            color: Color.fromRGBO(220, 20, 47, 0.7),
+            color: Color.fromRGBO(37, 211, 102, 1),
           ),
           enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
-            color: Color.fromRGBO(220, 20, 47, 0.7),
+            color: Color.fromRGBO(37, 211, 102, 1),
           )),
           focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
-            color: Color.fromRGBO(220, 20, 47, 0.7),
+            color: Color.fromRGBO(37, 211, 102, 1),
           )),
           focusedErrorBorder:
               OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
@@ -90,7 +90,7 @@ class _ChangeEmailState extends State<ChangeEmail> {
       minWidth: MediaQuery.of(context).size.width,
       height: 50,
       child: RaisedButton(
-        color: Color.fromRGBO(220, 20, 47, 0.7),
+        color: Color.fromRGBO(37, 211, 102, 1),
         child: Text(
           "Update",
           style:

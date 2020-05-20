@@ -25,7 +25,7 @@ class _ChangePhoneNumberState extends State<ChangePhoneNumber> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
+        backgroundColor: Color.fromRGBO(37, 211, 102, 1),
         title: Text("Account Security"),
       ),
       body: Container(
@@ -91,12 +91,12 @@ class _ChangePhoneNumberState extends State<ChangePhoneNumber> {
                 hintText: "0244581027",
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Color.fromRGBO(220, 20, 47, 0.7),
+                    color: Color.fromRGBO(37, 211, 102, 1),
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Color.fromRGBO(220, 20, 47, 0.7),
+                    color: Color.fromRGBO(37, 211, 102, 1),
                   ),
                 ),
                 focusedErrorBorder: OutlineInputBorder(
@@ -126,7 +126,7 @@ class _ChangePhoneNumberState extends State<ChangePhoneNumber> {
               },
             ),
             data: Theme.of(context).copyWith(
-              primaryColor: Color.fromRGBO(220, 20, 47, 0.7),
+              primaryColor: Color.fromRGBO(37, 211, 102, 1),
             ),
           ),
         ),
@@ -139,7 +139,7 @@ class _ChangePhoneNumberState extends State<ChangePhoneNumber> {
       minWidth: MediaQuery.of(context).size.width,
       height: 50,
       child: RaisedButton(
-        color: Color.fromRGBO(220, 20, 47, 0.7),
+        color: Color.fromRGBO(37, 211, 102, 1),
         child: Text(
           "Update",
           style:

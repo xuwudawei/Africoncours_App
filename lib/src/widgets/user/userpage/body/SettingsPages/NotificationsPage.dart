@@ -12,14 +12,15 @@ class _NotificationsState extends State<Notifications> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Settings'),
-        backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
+        title: Text('Notification Settings'),
+        backgroundColor: Color.fromRGBO(37, 211, 102, 1),
       ),
       body: PreferencePage([
         PreferenceTitle('Manage Notifications'),
         SwitchPreference(
           'New Message Alerts',
           'notification_nm_alerts',
+          switchActiveColor: Color.fromRGBO(37, 211, 102, 1),
           defaultVal: true,
           onEnable: () async {
             //send a request to the backend
@@ -35,6 +36,7 @@ class _NotificationsState extends State<Notifications> {
         SwitchPreference(
           'Private Messages from Friends',
           'notificatons_pm_friend',
+          switchActiveColor: Color.fromRGBO(37, 211, 102, 1),
           defaultVal: true,
           onEnable: () async {
             //send a request to the backend
@@ -49,6 +51,7 @@ class _NotificationsState extends State<Notifications> {
         SwitchPreference(
           'Private Messages from Strangers',
           'notificatons_pm_stranger',
+          switchActiveColor: Color.fromRGBO(37, 211, 102, 1),
           defaultVal: true,
           onEnable: () async {
             //send a request to the backend

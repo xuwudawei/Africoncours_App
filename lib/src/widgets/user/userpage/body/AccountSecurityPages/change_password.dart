@@ -39,7 +39,7 @@ class _ChangePasswordState extends State<ChangePassword> {
       key: _scaffold,
       appBar: AppBar(
         title: Text('Change'),
-        backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
+        backgroundColor: Color.fromRGBO(37, 211, 102, 1),
       ),
       body: Container(
         padding: EdgeInsets.only(left: 40, right: 40),
@@ -87,15 +87,15 @@ class _ChangePasswordState extends State<ChangePassword> {
           hintText: "******",
           labelText: "New Password",
           labelStyle: TextStyle(
-            color: Color.fromRGBO(220, 20, 47, 0.7),
+            color: Color.fromRGBO(37, 211, 102, 1),
           ),
           enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
-            color: Color.fromRGBO(220, 20, 47, 0.7),
+            color: Color.fromRGBO(37, 211, 102, 1),
           )),
           focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
-            color: Color.fromRGBO(220, 20, 47, 0.7),
+            color: Color.fromRGBO(37, 211, 102, 1),
           )),
           focusedErrorBorder:
               OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
@@ -123,15 +123,15 @@ class _ChangePasswordState extends State<ChangePassword> {
           hintText: "******",
           labelText: "Confirm New Password",
           labelStyle: TextStyle(
-            color: Color.fromRGBO(220, 20, 47, 0.7),
+            color: Color.fromRGBO(37, 211, 102, 1),
           ),
           enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
-            color: Color.fromRGBO(220, 20, 47, 0.7),
+            color: Color.fromRGBO(37, 211, 102, 1),
           )),
           focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
-            color: Color.fromRGBO(220, 20, 47, 0.7),
+            color: Color.fromRGBO(37, 211, 102, 1),
           )),
           focusedErrorBorder:
               OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
@@ -156,7 +156,7 @@ class _ChangePasswordState extends State<ChangePassword> {
       minWidth: MediaQuery.of(context).size.width,
       height: 50,
       child: RaisedButton(
-        color: Color.fromRGBO(220, 20, 47, 0.7),
+        color: Color.fromRGBO(37, 211, 102, 1),
         child: Text(
           "Update",
           style:
@@ -207,7 +207,7 @@ class _ChangePasswordState extends State<ChangePassword> {
   showSnackBar() {
     final snackbar = new SnackBar(
       duration: new Duration(seconds: 3),
-      backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
+      backgroundColor: Color.fromRGBO(37, 211, 102, 1),
       content: Text(
         "Password Updated Successfully",
         textAlign: TextAlign.center,

@@ -9,7 +9,7 @@ class ViewNews extends StatelessWidget {
         appBar: AppBar(
           centerTitle: true,
           title: Text("Contests"),
-          backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
+          backgroundColor: Color.fromRGBO(37, 211, 102, 1),
         ),
         body: Container(
           padding: EdgeInsets.all(10),

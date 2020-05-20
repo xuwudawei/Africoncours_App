@@ -62,7 +62,7 @@ class _SettingsState extends State<Settings> {
         ],
       ),
       data: Theme.of(context).copyWith(
-        primaryColor: Color.fromRGBO(220, 20, 47, 0.7),
+        primaryColor: Color.fromRGBO(37, 211, 102, 1),
       ),
     );
   }

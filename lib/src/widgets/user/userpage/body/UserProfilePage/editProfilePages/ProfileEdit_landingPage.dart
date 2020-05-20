@@ -11,7 +11,7 @@ class _ProfileEditMainPageState extends State<ProfileEditMainPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Profile Page'),
-        backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
+        backgroundColor: Color.fromRGBO(37, 211, 102, 1),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
