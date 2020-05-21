@@ -10,6 +10,13 @@ import 'body/news.dart';
 import 'body/setting.dart';
 import 'body/BottomNavJobs.dart';
 
+//varoius job pages
+import '../userpage/body/JobPages/global.dart';
+import '../userpage/body/JobPages/ui/screens/details.dart';
+import '../userpage/body/JobPages/ui/screens/screens.dart';
+import '../userpage/body/JobPages/ui/widgets/widgets.dart';
+import '../userpage/body/JobPages/models/job.dart';
+
 // Drawer import
 import 'body/userDrawer.dart';
 
@@ -19,6 +26,21 @@ class UserPage extends StatefulWidget {
 }
 
 class _UserPageState extends State<UserPage> {
+  List<String> _nebulae;
+  //List<String> _filterList;
+  _SearchAppBarDelegate _searchDelegate;
+  @override
+  void initState() {
+    super.initState();
+    //controller = new TabController(length: 4, vsync: this.);
+    _nebulae = new List<String>();
+    for (var a in jobList) {
+      _nebulae.add(a.title);
+      _nebulae.add(a.location);
+      _searchDelegate = _SearchAppBarDelegate(_nebulae);
+    }
+  }
+
   // @override
   // Map info = {};
   // void initState() {
@@ -60,6 +82,14 @@ class _UserPageState extends State<UserPage> {
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(37, 211, 102, 1),
         actions: <Widget>[
+          IconButton(
+            tooltip: 'Search',
+            icon: const Icon(Icons.search),
+            //Don't block the main thread
+            onPressed: () {
+              showSearch(context: context, delegate: _searchDelegate);
+            },
+          ),
           PopupMenuButton(
             itemBuilder: (context) => <PopupMenuEntry>[
               PopupMenuItem(
@@ -128,6 +158,181 @@ class _UserPageState extends State<UserPage> {
           currentIndex: selectedNav,
         ),
       ),
+    );
+  }
+}
+
+// void showSearchPage(
+//     BuildContext context, _SearchAppBarDelegate searchDelegate) async {
+//   final String selected = await showSearch<String>(
+//     context: context,
+//     delegate: searchDelegate,
+//   );
+
+// if (selected != null) {
+//   Scaffold.of(context).showSnackBar(
+//     SnackBar(
+//       content: Text('Your Word Choice: $selected'),
+//     ),
+//   );
+// }
+// }
+
+class _SearchAppBarDelegate extends SearchDelegate<String> {
+  //list holds the full word list
+  final List<String> _data;
+
+  //list holds history search words.
+  final List<String> _history;
+
+  //initialize delegate with full word list and history words
+  _SearchAppBarDelegate(List<String> words)
+      : _data = words,
+        //pre-populated history of words
+        _history = <String>['Google', 'Flutter', 'Hash Code'],
+        super();
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    return IconButton(
+      tooltip: 'Back',
+      icon: AnimatedIcon(
+        icon: AnimatedIcons.menu_arrow,
+        progress: transitionAnimation,
+      ),
+      onPressed: () {
+        //Take control back to previous page
+        this.close(context, null);
+      },
+    );
+  }
+
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    return <Widget>[
+      query.isNotEmpty
+          ? IconButton(
+              tooltip: 'Clear',
+              icon: const Icon(Icons.clear),
+              onPressed: () {
+                query = '';
+                showSuggestions(context);
+              },
+            )
+          : IconButton(
+              icon: const Icon(Icons.mic),
+              tooltip: 'Voice input',
+              onPressed: () {
+                this.query = 'TBW: Get input from voice';
+              },
+            ),
+    ];
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    List<JobModel> displaySingleItem = [];
+    jobList.forEach((w) {
+      if (w.title.toLowerCase().contains(this.query.toLowerCase())) {
+        displaySingleItem.add(w);
+        print(w);
+        print(displaySingleItem);
+        print(query);
+      }
+      if (w.location.toLowerCase().contains(this.query.toLowerCase())) {
+        displaySingleItem.add(w);
+        print(w);
+        print(displaySingleItem);
+        print(query);
+      }
+    });
+    return new Container(
+//just changed from flexible
+      child: new ListView.builder(
+          itemCount: displaySingleItem.length,
+          itemBuilder: (BuildContext context, int i) {
+            return JobContainer(
+              description: displaySingleItem[i].description,
+              iconUrl: displaySingleItem[i].iconUrl,
+              location: displaySingleItem[i].location,
+              salary: displaySingleItem[i].salary,
+              title: displaySingleItem[i].title,
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (ctx) => DetailsScreen(id: i),
+                ),
+              ),
+            );
+          }),
+    );
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    final Iterable<String> suggestions = this.query.isEmpty
+        ? _history
+        : _data
+            .where((word) => word.toLowerCase().contains(query.toLowerCase()));
+    return _WordSuggestionList(
+        query: this.query,
+        suggestions: suggestions.toList(),
+        onSelected: (String suggestion) {
+          this.query = suggestion;
+          this._history.insert(0, suggestion);
+          showResults(context);
+        });
+  }
+}
+
+class _WordSuggestionList extends StatelessWidget {
+  const _WordSuggestionList({this.suggestions, this.query, this.onSelected});
+
+  final List<String> suggestions;
+  final String query;
+  final ValueChanged<String> onSelected;
+
+  @override
+  Widget build(BuildContext context) {
+    List<JobModel> displaySuggestionItems = [];
+    for (var b in suggestions) {
+      jobList.forEach((w) {
+        if (w.title == b) {
+          displaySuggestionItems.add(w);
+          print(w);
+          print(displaySuggestionItems);
+          print(query);
+        }
+        if (w.location == b) {
+          displaySuggestionItems.add(w);
+          print(w);
+          print(displaySuggestionItems);
+          print(query);
+        }
+      });
+    }
+
+    return new Container(
+      //just changed from flexible
+      child: new ListView.builder(
+          itemCount: displaySuggestionItems.length,
+          itemBuilder: (BuildContext context, int i) {
+            return JobContainer(
+                description: displaySuggestionItems[i].description,
+                iconUrl: displaySuggestionItems[i].iconUrl,
+                location: displaySuggestionItems[i].location,
+                salary: displaySuggestionItems[i].salary,
+                title: displaySuggestionItems[i].title,
+                onTap: () {
+                  onSelected(displaySuggestionItems[i].title);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (ctx) => DetailsScreen(id: i),
+                    ),
+                  );
+                });
+          }),
     );
   }
 }

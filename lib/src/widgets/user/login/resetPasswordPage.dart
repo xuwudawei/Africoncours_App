@@ -19,7 +19,7 @@ class _ResetPasswordState extends State<ResetPassword> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
+        backgroundColor: Color.fromRGBO(74, 201, 89, .9),
         title: Text(
           "Forgot Password",
           textAlign: TextAlign.center,
@@ -59,15 +59,23 @@ class _ResetPasswordState extends State<ResetPassword> {
           hintText: "example@123.com",
           labelText: "Email",
           labelStyle: TextStyle(
-            color: Color.fromRGBO(220, 20, 47, 0.7),
+              //color: Color.fromRGBO(74, 201, 89, .9),
+              ),
+          prefixIcon: Material(
+            elevation: 0,
+            borderRadius: BorderRadius.all(Radius.circular(30)),
+            child: Icon(
+              Icons.email,
+              color: Color.fromRGBO(74, 201, 89, .9),
+            ),
           ),
           enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
-            color: Color.fromRGBO(220, 20, 47, 0.7),
+            color: Color.fromRGBO(74, 201, 89, .9),
           )),
           focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
-            color: Color.fromRGBO(220, 20, 47, 0.7),
+            color: Color.fromRGBO(74, 201, 89, .9),
           )),
           focusedErrorBorder:
               OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
@@ -97,7 +105,7 @@ class _ResetPasswordState extends State<ResetPassword> {
       minWidth: MediaQuery.of(context).size.width,
       height: 50,
       child: RaisedButton(
-        color: Color.fromRGBO(220, 20, 47, 0.7),
+        color: Color.fromRGBO(74, 201, 89, .9),
         child: Text(
           "Send Password Reset Link",
           style:
@@ -113,7 +121,7 @@ class _ResetPasswordState extends State<ResetPassword> {
 
 showDoneSnackBar() {
   final snackbar = SnackBar(
-    backgroundColor: Color.fromRGBO(220, 20, 47, 0.7),
+    backgroundColor: Color.fromRGBO(74, 201, 89, .9),
     content: Text(
       "Check your email for password reset link",
       textAlign: TextAlign.center,

@@ -118,7 +118,7 @@ List<JobModel> jobList = [
     description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum culpa ab vitae, totam voluptatum laudantium excepturi accusantium, incidunt sunt quos nihil, odit consequuntur non modi vel veniam. Eligendi, dicta? Eius. ",
     iconUrl: "",
-    location: "Company, San Francisco, CA",
+    location: "Ghana",
     title: "Web Designer",
     salary: "\$30,000 - 60,000\$",
     photos: [

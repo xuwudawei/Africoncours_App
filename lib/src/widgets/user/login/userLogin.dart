@@ -234,7 +234,7 @@ class _UserLoginState extends State<UserLogin> {
                     }),
               )),
           SizedBox(
-            height: 20,
+            height: 40,
           ),
           Center(
               child: GestureDetector(
@@ -252,29 +252,29 @@ class _UserLoginState extends State<UserLogin> {
           SizedBox(
             height: 40,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                "Don't have an Account ? ",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 12,
-                    fontWeight: FontWeight.normal),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.of(context).pushNamed('/user/signup');
-                },
-                child: Text("Sign Up ",
-                    style: TextStyle(
-                        color: Color.fromRGBO(220, 20, 47, 0.7),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 12,
-                        decoration: TextDecoration.underline)),
-              ),
-            ],
-          ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   children: <Widget>[
+          //     Text(
+          //       "Don't have an Account ? ",
+          //       style: TextStyle(
+          //           color: Colors.black,
+          //           fontSize: 12,
+          //           fontWeight: FontWeight.normal),
+          //     ),
+          //     GestureDetector(
+          //       onTap: () {
+          //         Navigator.of(context).pushNamed('/user/signup');
+          //       },
+          //       child: Text("Sign Up ",
+          //           style: TextStyle(
+          //               color: Color.fromRGBO(220, 20, 47, 0.7),
+          //               fontWeight: FontWeight.w500,
+          //               fontSize: 12,
+          //               decoration: TextDecoration.underline)),
+          //     ),
+          //   ],
+          // ),
           SizedBox(
             height: 10,
           ),

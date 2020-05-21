@@ -25,6 +25,7 @@ class _JobHomeScreenState extends State<JobHomeScreen> {
     _nebulae = new List<String>();
     for (var a in jobList) {
       _nebulae.add(a.title);
+      _nebulae.add(a.location);
     }
   }
 
@@ -125,6 +126,12 @@ class _JobHomeScreenState extends State<JobHomeScreen> {
     for (var b in _filterList) {
       jobList.forEach((w) {
         if (w.title == b) {
+          finalList.add(w);
+          print(w);
+          print(finalList);
+          print(_query);
+        }
+        if (w.location == b) {
           finalList.add(w);
           print(w);
           print(finalList);
