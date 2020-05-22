@@ -10,52 +10,52 @@ class MessageHomeScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         textTheme: Theme.of(context).textTheme.apply(bodyColor: Colors.black45),
         iconTheme: IconThemeData(color: Colors.black45),
-        title: Text("Messengerish"),
+        title: Text("Africoncours Messenger"),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
             onPressed: () {},
           ),
-          IconButton(
-            icon: Icon(Icons.add_box),
-            onPressed: () {},
-          ),
+          // IconButton(
+          //   icon: Icon(Icons.add_box),
+          //   onPressed: () {},
+          // ),
         ],
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        elevation: 5,
-        backgroundColor: myGreen,
-        child: Icon(Icons.camera),
-        onPressed: () {},
-      ),
-      bottomNavigationBar: BottomAppBar(
-        shape: CircularNotchedRectangle(),
-        notchMargin: 7.0,
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            IconButton(
-              icon: Icon(Icons.message, color: Colors.black45),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: Icon(Icons.view_list, color: Colors.black45),
-              onPressed: () {},
-            ),
-            SizedBox(width: 25),
-            IconButton(
-              icon: Icon(Icons.call, color: Colors.black45),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: Icon(Icons.person_outline, color: Colors.black45),
-              onPressed: () {},
-            ),
-          ],
-        ),
-      ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // floatingActionButton: FloatingActionButton(
+      //   elevation: 5,
+      //   backgroundColor: myGreen,
+      //   child: Icon(Icons.camera),
+      //   onPressed: () {},
+      // ),
+      // bottomNavigationBar: BottomAppBar(
+      //   shape: CircularNotchedRectangle(),
+      //   notchMargin: 7.0,
+      //   child: Row(
+      //     mainAxisSize: MainAxisSize.max,
+      //     mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //     children: <Widget>[
+      //       IconButton(
+      //         icon: Icon(Icons.message, color: Colors.black45),
+      //         onPressed: () {},
+      //       ),
+      //       IconButton(
+      //         icon: Icon(Icons.view_list, color: Colors.black45),
+      //         onPressed: () {},
+      //       ),
+      //       SizedBox(width: 25),
+      //       IconButton(
+      //         icon: Icon(Icons.call, color: Colors.black45),
+      //         onPressed: () {},
+      //       ),
+      //       IconButton(
+      //         icon: Icon(Icons.person_outline, color: Colors.black45),
+      //         onPressed: () {},
+      //       ),
+      //     ],
+      //   ),
+      // ),
       body: ListView.builder(
         itemCount: friendsList.length,
         itemBuilder: (ctx, i) {

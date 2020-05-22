@@ -75,7 +75,7 @@ class _UserDrawerState extends State<UserDrawer> {
           ),
           ListTile(
             leading: Icon(Icons.message),
-            title: Text("Messages"),
+            title: Text("Chats"),
             onTap: () {
               Navigator.of(context).pushNamed('/user/sidemenu/messages');
             },

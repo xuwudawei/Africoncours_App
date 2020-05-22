@@ -29,7 +29,7 @@ class _ChatScreenState extends State<ChatScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "Cybdom Tech",
+                  "David",
                   style: Theme.of(context).textTheme.subhead,
                   overflow: TextOverflow.clip,
                 ),
@@ -43,20 +43,20 @@ class _ChatScreenState extends State<ChatScreen> {
             )
           ],
         ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.phone),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(Icons.videocam),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(Icons.more_vert),
-            onPressed: () {},
-          ),
-        ],
+        // actions: <Widget>[
+        //   IconButton(
+        //     icon: Icon(Icons.phone),
+        //     onPressed: () {},
+        //   ),
+        //   IconButton(
+        //     icon: Icon(Icons.videocam),
+        //     onPressed: () {},
+        //   ),
+        //   IconButton(
+        //     icon: Icon(Icons.more_vert),
+        //     onPressed: () {},
+        //   ),
+        // ],
       ),
       body: Stack(
         children: <Widget>[
