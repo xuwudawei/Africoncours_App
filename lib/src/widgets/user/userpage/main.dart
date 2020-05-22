@@ -10,12 +10,19 @@ import 'body/news.dart';
 import 'body/setting.dart';
 import 'body/BottomNavJobs.dart';
 
-//varoius job pages
+//various job pages
 import '../userpage/body/JobPages/global.dart';
 import '../userpage/body/JobPages/ui/screens/details.dart';
 import '../userpage/body/JobPages/ui/screens/screens.dart';
 import '../userpage/body/JobPages/ui/widgets/widgets.dart';
 import '../userpage/body/JobPages/models/job.dart';
+
+//various competitions pages
+import '../userpage/body/CompetitionsPages/competitionGlobal.dart';
+import '../userpage/body/CompetitionsPages/ui/screens/competitionDetails.dart';
+import '../userpage/body/CompetitionsPages/ui/screens/screens.dart';
+import '../userpage/body/CompetitionsPages/ui/widgets/competitionWidgets.dart';
+import '../userpage/body/CompetitionsPages/models/CompetitionData.dart';
 
 // Drawer import
 import 'body/userDrawer.dart';
@@ -37,8 +44,13 @@ class _UserPageState extends State<UserPage> {
     for (var a in jobList) {
       _nebulae.add(a.title);
       _nebulae.add(a.location);
-      _searchDelegate = _SearchAppBarDelegate(_nebulae);
     }
+    for (var x in competitionsList) {
+      _nebulae.add(x.title);
+      _nebulae.add(x.location);
+    }
+    print(_nebulae);
+    _searchDelegate = _SearchAppBarDelegate(_nebulae);
   }
 
   // @override
@@ -79,55 +91,122 @@ class _UserPageState extends State<UserPage> {
     final userInfo = Provider.of<UserInfoProvider>(context);
     // userInfo.setUserInfo();
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromRGBO(37, 211, 102, 1),
-        actions: <Widget>[
-          IconButton(
-            tooltip: 'Search',
-            icon: const Icon(Icons.search),
-            //Don't block the main thread
-            onPressed: () {
-              showSearch(context: context, delegate: _searchDelegate);
-            },
-          ),
-          PopupMenuButton(
-            itemBuilder: (context) => <PopupMenuEntry>[
-              PopupMenuItem(
-                key: Key("logout"),
-                value: "logout",
-                child: GestureDetector(
-                  child: Text('Logout'),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(50.0),
+        child: AppBar(
+          backgroundColor: Color.fromRGBO(37, 211, 102, 1),
+          actions: <Widget>[
+            GestureDetector(
+              child: SizedBox(
+                height: 40,
+                width: 295,
+                child: TextField(
+                  //enabled: false,
                   onTap: () {
-                    print("Logout");
+                    FocusScope.of(context).requestFocus(new FocusNode());
+                    showSearch(context: context, delegate: _searchDelegate);
                   },
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.search),
+                    hintText: "Search for Jobs here",
+                    fillColor: Colors.white,
+                    filled: true,
+                  ),
                 ),
               ),
-              PopupMenuItem(
-                key: Key("settings"),
-                value: "settings",
-                child: Text('Settings'),
-              ),
-            ],
-            icon: Consumer<UserInfoProvider>(
-              builder: (context, user, child) {
-                return CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      "https://avatars3.githubusercontent.com/u/57068034?s=460&u=d7eb15aed461ed917047aa35da504974596034e9&v=4"),
-                );
+              onTap: () {
+                FocusScope.of(context).requestFocus(new FocusNode());
+                showSearch(context: context, delegate: _searchDelegate);
               },
             ),
-            onSelected: (value) {
-              if (value == "settings") {
-                Navigator.of(context).pushNamed('/user/sidemenu/settings');
-              } else {
-                // Navigator.of(context).popUntil(ModalRoute.withName('/login'));
-                Navigator.of(context).pushNamedAndRemoveUntil(
-                    '/user/login', ModalRoute.withName('/useroption'));
-              } // log the user out at the back end
-            },
-          ),
-        ],
+            PopupMenuButton(
+              itemBuilder: (context) => <PopupMenuEntry>[
+                PopupMenuItem(
+                  key: Key("logout"),
+                  value: "logout",
+                  child: GestureDetector(
+                    child: Text('Logout'),
+                    onTap: () {
+                      print("Logout");
+                    },
+                  ),
+                ),
+                PopupMenuItem(
+                  key: Key("settings"),
+                  value: "settings",
+                  child: Text('Settings'),
+                ),
+              ],
+              icon: Consumer<UserInfoProvider>(
+                builder: (context, user, child) {
+                  return CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        "https://avatars3.githubusercontent.com/u/57068034?s=460&u=d7eb15aed461ed917047aa35da504974596034e9&v=4"),
+                  );
+                },
+              ),
+              onSelected: (value) {
+                if (value == "settings") {
+                  Navigator.of(context).pushNamed('/user/sidemenu/settings');
+                } else {
+                  // Navigator.of(context).popUntil(ModalRoute.withName('/login'));
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                      '/user/login', ModalRoute.withName('/useroption'));
+                } // log the user out at the back end
+              },
+            ),
+          ],
+        ),
       ),
+      // appBar: AppBar(
+      //   backgroundColor: Color.fromRGBO(37, 211, 102, 1),
+      //   actions: <Widget>[
+      //     IconButton(
+      //       tooltip: 'Search',
+      //       icon: const Icon(Icons.search),
+      //       //Don't block the main thread
+      //       onPressed: () {
+      //         showSearch(context: context, delegate: _searchDelegate);
+      //       },
+      //     ),
+      //     PopupMenuButton(
+      //       itemBuilder: (context) => <PopupMenuEntry>[
+      //         PopupMenuItem(
+      //           key: Key("logout"),
+      //           value: "logout",
+      //           child: GestureDetector(
+      //             child: Text('Logout'),
+      //             onTap: () {
+      //               print("Logout");
+      //             },
+      //           ),
+      //         ),
+      //         PopupMenuItem(
+      //           key: Key("settings"),
+      //           value: "settings",
+      //           child: Text('Settings'),
+      //         ),
+      //       ],
+      //       icon: Consumer<UserInfoProvider>(
+      //         builder: (context, user, child) {
+      //           return CircleAvatar(
+      //             backgroundImage: NetworkImage(
+      //                 "https://avatars3.githubusercontent.com/u/57068034?s=460&u=d7eb15aed461ed917047aa35da504974596034e9&v=4"),
+      //           );
+      //         },
+      //       ),
+      //       onSelected: (value) {
+      //         if (value == "settings") {
+      //           Navigator.of(context).pushNamed('/user/sidemenu/settings');
+      //         } else {
+      //           // Navigator.of(context).popUntil(ModalRoute.withName('/login'));
+      //           Navigator.of(context).pushNamedAndRemoveUntil(
+      //               '/user/login', ModalRoute.withName('/useroption'));
+      //         } // log the user out at the back end
+      //       },
+      //     ),
+      //   ],
+      // ),
       drawer: Drawer(
         child: UserDrawer(),
       ),
@@ -189,7 +268,7 @@ class _SearchAppBarDelegate extends SearchDelegate<String> {
   _SearchAppBarDelegate(List<String> words)
       : _data = words,
         //pre-populated history of words
-        _history = <String>['Google', 'Flutter', 'Hash Code'],
+        _history = <String>["ai", "content"],
         super();
 
   @override
@@ -231,8 +310,8 @@ class _SearchAppBarDelegate extends SearchDelegate<String> {
 
   @override
   Widget buildResults(BuildContext context) {
-    List<JobModel> displaySingleItem = [];
-    jobList.forEach((w) {
+    List<NewJobModel> displaySingleItem = [];
+    jobList2.forEach((w) {
       if (w.title.toLowerCase().contains(this.query.toLowerCase())) {
         displaySingleItem.add(w);
         print(w);
@@ -246,6 +325,7 @@ class _SearchAppBarDelegate extends SearchDelegate<String> {
         print(query);
       }
     });
+
     return new Container(
 //just changed from flexible
       child: new ListView.builder(
@@ -294,16 +374,16 @@ class _WordSuggestionList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<JobModel> displaySuggestionItems = [];
+    List<NewJobModel> displaySuggestionItems = [];
     for (var b in suggestions) {
-      jobList.forEach((w) {
-        if (w.title == b) {
+      jobList2.forEach((w) {
+        if (w.title.toLowerCase().contains(b.toLowerCase())) {
           displaySuggestionItems.add(w);
           print(w);
           print(displaySuggestionItems);
           print(query);
         }
-        if (w.location == b) {
+        if (w.location.toLowerCase().contains(b.toLowerCase())) {
           displaySuggestionItems.add(w);
           print(w);
           print(displaySuggestionItems);
@@ -336,3 +416,7 @@ class _WordSuggestionList extends StatelessWidget {
     );
   }
 }
+
+abstract class ListItem {}
+
+List<ListItem> item = [];

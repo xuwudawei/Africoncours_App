@@ -11,3 +11,20 @@ class CompetitionModel {
       this.date,
       this.title});
 }
+
+abstract class ListItem {}
+
+class NewCompetitionModel implements ListItem {
+  final String description, iconUrl, location, title, cost, date, key;
+  final List<String> photos;
+
+  NewCompetitionModel(
+      {this.photos,
+      this.description,
+      this.iconUrl,
+      this.location,
+      this.cost,
+      this.date,
+      this.key,
+      this.title});
+}
